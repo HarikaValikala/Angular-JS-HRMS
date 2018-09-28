@@ -1,0 +1,110 @@
+<div class="wrapper">
+	<top-dir></top-dir>
+		<side-dir></side-dir>
+		<div class="content">
+				<div class="container">
+					<div class="col-md-offset-2 col-md-8">
+						<div class="Emp_mar_top addEmployeelabel">
+							<h3 class="head_change">Customer Address</h3>
+							<form name="cusBill">
+									<div  class="form-group row">
+										<label for="tag" class="control-label col-md-3"> Customer Name : <span style="color:Red">*</span></label>
+										<div class="col-md-9">
+											<select class='form-control' ng-model="addressGetList.customer.id" name="cusname" ng-options="cus.id as cus.customerName for cus in customerDetails" ng-change="cusBasicList(addressGetList.customer.id)">
+												<option value="">Choose an option</option>
+							  				</select>
+											<div class="has-error" ng-show="cusBill.cusname.$dirty" >
+						                    	<span style="color:Red" class="error" ng-show="cusBill.cusname.$error.required"> Customer Name is Required !</span>
+						                  	</div>
+										</div>
+									</div>
+									<div  class="form-group row">
+										<label for="tag" class="control-label col-md-3"> Address Type : <span style="color:Red">*</span></label>
+										<div class="col-md-9">
+											<select class='form-control' ng-model="addressGetList.customerAddressType.id" name="cusname" ng-options="cus.id as cus.addressType for cus in addressDetails" ng-change="addressTypeList(addressGetList.customerAddressType.id)">
+												<option value="">Choose an option</option>
+							  				</select>
+											<div class="has-error" ng-show="cusBill.bill.$dirty" >
+						                    	<span style="color:Red" class="error" ng-show="cusBill.bill.$error.required"> Address Type is Required!</span>
+						                  	</div>
+										</div>
+									</div>
+									<div  class="form-group row">
+										<label for="tag" class="control-label col-md-3"> Address 1 : <span style="color:Red">*</span></label>
+										<div class="col-md-9">
+											<input  type="text" class="form-control" ng-model="addressGetList.address1" name="bill" placeholder="Enter Address 1" required/>
+											 <div class="has-error" ng-show="cusBill.bill.$dirty" >
+						                    	<span style="color:Red" class="error" ng-show="cusBill.bill.$error.required"> Address 1 is Required!</span>
+						                  	</div>
+										</div>
+									</div>
+									<div  class="form-group row">
+										<label for="tag" class="control-label col-md-3"> Address 2 : <span style="color:Red">*</span></label>
+										<div class="col-md-9">
+											<input  type="text" class="form-control" ng-model="addressGetList.address2" name="bill" placeholder="Enter Address 2" required/>
+											 <div class="has-error" ng-show="cusBill.bill.$dirty" >
+						                    	<span style="color:Red" class="error" ng-show="cusBill.bill.$error.required"> Address 2 is Required!</span>
+						                  	</div>
+										</div>
+									</div>
+									<div  class="form-group row">
+										<label for="tag" class="control-label col-md-3"> Address 3 : <span style="color:Red">*</span></label>
+										<div class="col-md-9">
+											<input  type="text" class="form-control" ng-model="addressGetList.address3" name="bill" placeholder="Enter Address 3" required/>
+											 <div class="has-error" ng-show="cusBill.bill.$dirty" >
+						                    	<span style="color:Red" class="error" ng-show="cusBill.bill.$error.required"> Address 3 is Required!</span>
+						                  	</div>
+										</div>
+									</div>
+									<div  class="form-group row">
+										<label for="tag" class="control-label col-md-3"> City : <span style="color:Red">*</span></label>
+										<div class="col-md-9">
+											<textarea  type="text" class="form-control" ng-model="addressGetList.city" name="bill" placeholder="Enter City" required/>
+											 <div class="has-error" ng-show="cusBill.bill.$dirty" >
+						                    	<span style="color:Red" class="error" ng-show="cusBill.bill.$error.required"> City is Required!</span>
+						                  	</div>
+										</div>
+									</div>
+									<div  class="form-group row">
+										<label for="tag" class="control-label col-md-3"> State : <span style="color:Red">*</span></label>
+										<div class="col-md-9">
+											<input  type="text" class="form-control" ng-model="addressGetList.state" name="bill" placeholder="Enter State" required/>
+											 <div class="has-error" ng-show="cusBill.bill.$dirty" >
+						                    	<span style="color:Red" class="error" ng-show="cusBill.bill.$error.required"> State is Required!</span>
+						                  	</div>
+										</div>
+									</div>
+									<div  class="form-group row">
+										<label for="tag" class="control-label col-md-3"> Country : <span style="color:Red">*</span></label>
+										<div class="col-md-9">
+											<input  type="text" class="form-control" ng-model="addressGetList.country" name="bill" placeholder="Enter Country" required/>
+											 <div class="has-error" ng-show="cusBill.bill.$dirty" >
+						                    	<span style="color:Red" class="error" ng-show="cusBill.bill.$error.required"> Country is Required!</span>
+						                  	</div>
+										</div>
+									</div>
+									<div  class="form-group row">
+										<label for="tag" class="control-label col-md-3"> Pincode : <span style="color:Red">*</span></label>
+										<div class="col-md-9">
+											<input  type="text" class="form-control" ng-model="addressGetList.pincode" name="bill" placeholder="Enter Pincode" required/>
+											 <div class="has-error" ng-show="cusBill.bill.$dirty" >
+						                    	<span style="color:Red" class="error" ng-show="cusBill.bill.$error.required"> Pincode is Required!</span>
+						                  	</div>
+										</div>
+									</div>
+								</form>
+								<div class="col-md-12">
+									<button type="button" ui-sref="customerAddressTable" class="btn btn-primary btn_mar_top">Back</button>
+									<button type="button" class="btn btn-primary pull-right btn_mar_top" ng-click = "addressById()">Reset</button>
+								
+									
+									<button type="button" class="btn btn-primary pull-right btn_mar_top" ng-click="addressEdit()">Update</button>
+								</div>
+			
+							
+							</div>
+						</div>
+					</div>
+				</div>
+		</div>
+</div>

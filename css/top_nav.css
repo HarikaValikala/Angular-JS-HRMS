@@ -1,0 +1,15 @@
+.span_change{
+    position: absolute;
+    top: 20px;
+    font-size: 14px;
+}
+.nav_change{
+    margin-bottom: 0px !important;
+    border: 0px solid transparent !important;
+}
+.fon_chan{
+    font-size: 22px;
+}
+.imag_change{
+	padding-top: 8px;
+}

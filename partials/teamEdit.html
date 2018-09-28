@@ -1,0 +1,43 @@
+<div class="wrapper">
+	<top-dir></top-dir>
+		<side-dir></side-dir>
+		<div class="content">
+				<div class="container">
+					<div class="col-md-offset-2 col-md-8">
+						<div class="Emp_mar_top addEmployeelabel">
+							<form class="form-horizontal" name="teamForm">
+							<h3 style="color:#192766">Team</h3>
+								<p style="color:Red">Required Fields * </p>
+								<div class="form-group Emp_mar_top">
+									<label for="businessUnit" class="control-label col-md-3"> Business Unit <span style="color:Red"> * </span> :</label>
+									<div class="col-md-9">
+										<select class='form-control' nam ng-model="teamget.subBusinessUnit.bussinessUnitId.id"  ng-options="detail.id as detail.nameOfBusinessUnit for detail in budetails" ng-change="subbusunit(teamget.subBusinessUnit.bussinessUnitId.id)">
+									
+							  			</select>
+									</div>
+								</div>
+								<div class="form-group">
+									<label for="subUnit" class="control-label col-md-3"> Sub Business Unit <span style="color:Red"> * </span> : </label>
+									<div class="col-md-9">
+										<select class="form-control" ng-model="teamget.subBusinessUnit.id" ng-options="detail.id as detail.subBusinessUnitName for detail in sbudetails">
+											
+										</select>
+									</div>
+								</div>
+									<div class="form-group">
+									<label for="costCenter" class="control-label col-md-3" > Enter name of the Team <span style="color:Red"> * </span> : </label>
+									<div class="col-md-9">
+										<input type="text" class="form-control" ng-model="teamget.nameOfTheTeam">
+									</div>
+								</div>
+								</form>
+								<button type="button" ui-sref="teamTable" class="btn btn-primary btn_mar_top">Back</button>	
+								<button type="button" class="btn btn-primary pull-right btn_mar_top"  ng-click="getByIdList()">Reset</button>
+								<button type="button" class="btn btn-primary pull-right btn_mar_top" ng-click="teamEdit()">Update</button>
+							</div>
+							
+						</div>
+					</div>
+				</div>
+		</div>
+</div>

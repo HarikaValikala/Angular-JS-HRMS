@@ -1,0 +1,186 @@
+	<div class="wrapper">
+	<top-dir></top-dir>
+		<side-dir></side-dir>
+		<div class="content">
+			<div class="btn_mar_top ">	
+			
+			<div class="container">
+		<div id="form-container">
+  
+	      <div class="page-header text-center">
+	          <h2>Employee</h2>
+	         
+	             <div id="status-buttons" class="text-center">
+	              <a ui-sref-active="active" ui-sref="basicinfo"><span>1</span>  Basic info</a>
+	              <a ui-sref-active="active" ui-sref="addinfo"><span>2</span> Add Info</a>
+	               <a ui-sref-active="active" ui-sref="jobinfo"><span>3</span>Job Info</a>
+	                 <a ui-sref-active="active" ui-sref="kye"><span>4</span>KYE</a>
+	                 <a ui-sref-active="active" ui-sref="prevexp"><span>5</span>Prev Exp</a>
+	                 <a ui-sref-active="active" ui-sref="qualification"><span>6</span>Qualification</a>
+	               <!--   <a ui-sref-active="active" ui-sref="salary"><span>7</span>Salary</a>
+	                 <a ui-sref-active="active" ui-sref="insurance"><span>8</span>Insurance</a> -->
+	                 
+	          </div>
+	      </div>
+	     
+	   <h3 style= "margin-left:40px;">Additional Information</h3>
+	          
+	          <form class="form-horizontal addEmployeelabel "  id="msform" name="ae">
+	       
+                           <div class="row">
+								<div class="form-group col-md-6">
+								    <label class="control-label col-md-4" for="employee">Father name:<span style="color:Red"> * </span></label>
+								    <div class="col-md-6"> 
+								      <input type="text" class="form-control" ng-model="employee.employeeAdditionalDetails.fatherName"  name="faname"  placeholder="Enter Father Name" required / >
+								       
+						                     <span  style="color:Red"  ng-if="ae.faname.$error.required && ae.faname.$dirty">Father name is required </span>
+							           		 
+						                  
+								    </div>
+							  	</div>
+							  	<div class="form-group col-md-6">
+								    <label class="control-label col-md-4" for="employee">Mother name:<span style="color:Red"> * </span></label>
+								    <div class="col-md-6"> 
+								      <input type="text" class="form-control" ng-model="employee.employeeAdditionalDetails.motherName"    placeholder="Enter Mother Name" name="mname"   ng-required="true" >
+						                    <span  style="color:Red"  ng-if="ae.mname.$error.required && ae.mname.$dirty">Mother name is a required</span>
+							           		
+								    </div>
+							  	</div>
+							  	</div>
+							  	<div class="row">
+							  		<div class="form-group col-md-6 ">
+								  	<label for="employee" class="control-label col-md-4">Maritial status:<span style="color:Red"> * </span></label>
+								  	<div class="col-md-6">
+										<select class="form-control" ng-model="employee.employeeAdditionalDetails.maritalStatus" id="team" name="maratial" required>
+										<option value="">Select an option</option>
+										<option>single</option>
+										<option>married</option>
+										<option>Devorse</option>
+										</select>
+										<span style="color:Red"  ng-show="ae.maratial.$error.required && ae.maratial.$touched">marital status is Required!</span>
+									</div>
+								</div>
+								<div class="form-group col-md-6">
+								    <label class="control-label col-md-4" for="employee">Spouse name:<span style="color:Red"> * </span></label>
+								    <div class="col-md-6"> 
+								      <input type="text" class="form-control" ng-model="employee.employeeAdditionalDetails.spouseName"    placeholder="Enter Spouse Name" name="mname" ng-pattern="/^[a-zA-Z\s]*$/"  ng-required="true" >
+						                    <span  style="color:Red"  ng-if="ae.mname.$error.required && ae.mname.$dirty">Spouse name is a required</span>
+							           		 <span  style="color:Red"  ng-show="ae.mname.$error.pattern">only strings are allowed</span>
+								    </div>
+							  	</div>
+								</div>
+								<div class="row">
+								
+								<div class="form-group col-md-6">
+								    <label class="control-label col-md-4" for="employee">Spouse_DOB:<span style="color:Red"> * </span></label>
+								    <div class="col-md-6">
+								      <input type="date" class="form-control" ng-model="employee.employeeAdditionalDetails.spouseDateOfBirth"  name="dateb" required/>
+								       <span style="color:Red"  ng-show="ae.dateb.$error.required && ae.dateb.$touched">Select date of birth</span>
+								    </div>
+								</div>
+							<div class="form-group col-md-6">
+								    <label class="control-label col-md-4" for="employee">No of child:<span style="color:Red"> * </span></label>
+								    <div class="col-md-6"> 
+								      <input type="text" class="form-control" ng-model="employee.employeeAdditionalDetails.noOfChild"    placeholder="Enter Spouse Name" name="mname"   ng-required="true" >
+						                    <span  style="color:Red"  ng-if="ae.mname.$error.required && ae.mname.$dirty">Spouse name is a required</span>
+							           		
+								    </div>
+							  	</div>
+								</div>
+								<div class="row">
+								
+													<div class="form-group col-md-6">
+								    <label class="control-label col-md-4" for="employee">Child-1 name:<span style="color:Red"> * </span></label>
+								    <div class="col-md-6"> 
+								      <input type="text" class="form-control" ng-model="employee.employeeAdditionalDetails.child1Name"    placeholder="Enter Child-1 Name" name="c1name"  ng-required="true" >
+						                    <span  style="color:Red"  ng-if="ae.c1name.$error.required && ae.c1name.$dirty">Spouse name is a required</span>
+							           		 
+								    </div>
+							  	</div>
+								<div class="form-group col-md-6">
+								    <label class="control-label col-md-4" for="employee">Child-1 DOB:<span style="color:Red"> * </span></label>
+								    <div class="col-md-6">
+								      <input type="date" class="form-control" ng-model="employee.employeeAdditionalDetails.child1DateOfBirth"  name="c1db" required/>
+								       <span style="color:Red"  ng-show="ae.c1db.$error.required && ae.c1db.$touched">Select date of birth</span>
+								    </div>
+								</div>
+								</div>
+									<div class="row">
+								
+								<div class="form-group col-md-6">
+								    <label class="control-label col-md-4" for="employee">Child-2 name:<span style="color:Red"> * </span></label>
+								    <div class="col-md-6"> 
+								      <input type="text" class="form-control" ng-model="employee.employeeAdditionalDetails.child2Name"    placeholder="Enter Child-2 Name" name="c2name"   ng-required="true" >
+						                    <span  style="color:Red"  ng-if="ae.c2name.$error.required && ae.c2name.$dirty">Spouse name is a required</span>
+							           		
+								    </div>
+							  	</div>
+								<div class="form-group col-md-6">
+								    <label class="control-label col-md-4" for="employee">Child-2 DOB:<span style="color:Red"> * </span></label>
+								    <div class="col-md-6">
+								      <input type="date" class="form-control" ng-model="employee.employeeAdditionalDetails.child2DateOfBirth"  name="c2db" required/>
+								       <span style="color:Red"  ng-show="ae.c2db.$error.required && ae.c2db.$touched">Select date of birth</span>
+								    </div>
+								</div>
+								</div>
+	
+	<div class="form-group">
+		<div class="col-md-11">
+		
+			<button type="button" class="btn btn-primary pull-right" ui-sref="jobinfo">Next Section</button>
+			<button type="button" class="btn btn-primary " ng-click="employeegetid()">Back</button>
+		</div>
+	</div>
+	
+</form>
+	   
+	  
+	  </div>
+	  	
+	</div>
+	
+    
+    </div>
+</div>
+	
+    </div>
+  -------------------------------------------------------
+  
+  <!-- <form id="msform">
+progressbar
+<ul id="progressbar">
+<li class="active">Account Setup</li>
+<li>Social Profiles</li>
+<li>Personal Details</li>
+</ul>
+fieldsets
+<fieldset>
+<h2 class="fs-title">Create your account</h2>
+<h3 class="fs-subtitle">This is step 1</h3>
+<input type="text" name="email" placeholder="Email" />
+<input type="password" name="pass" placeholder="Password" />
+<input type="password" name="cpass" placeholder="Confirm Password" />
+<input type="button" name="next" class="next action-button" value="Next" />
+</fieldset>
+<fieldset>
+<h2 class="fs-title">Social Profiles</h2>
+<h3 class="fs-subtitle">Your presence on the social network</h3>
+<input type="text" name="twitter" placeholder="Twitter" />
+<input type="text" name="facebook" placeholder="Facebook" />
+<input type="text" name="gplus" placeholder="Google Plus" />
+<input type="button" name="previous" class="previous action-button" value="Previous" />
+<input type="button" name="next" class="next action-button" value="Next" />
+</fieldset>
+<fieldset>
+<h2 class="fs-title">Personal Details</h2>
+<h3 class="fs-subtitle">We will never sell it</h3>
+<input type="text" name="fname" placeholder="First Name" />
+<input type="text" name="lname" placeholder="Last Name" />
+<input type="text" name="phone" placeholder="Phone" />
+<textarea name="address" placeholder="Address"></textarea>
+<input type="button" name="previous" class="previous action-button" value="Previous" />
+<input type="submit" name="submit" class="submit action-button" value="Submit" />
+</fieldset>
+</form> -->
+    	
+		

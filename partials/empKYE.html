@@ -1,0 +1,202 @@
+	<div class="wrapper">
+	<top-dir></top-dir>
+		<side-dir></side-dir>
+		<div class="content">
+			<div class="btn_mar_top ">	
+			
+			<div class="container">
+		<div id="form-container">
+  
+	      <div class="page-header text-center ">
+	          <h2>Employee</h2>
+	         
+	          <div id="status-buttons" class="text-center">
+	              <a ui-sref-active="active" ui-sref="basicinfo"><span>1</span> Basic info</a>
+	              <a ui-sref-active="active" ui-sref="addinfo"><span>2</span> Add info</a>
+	               <a ui-sref-active="active" ui-sref="jobinfo"><span>3</span>Job Info</a>
+	               <a ui-sref-active="active" ui-sref="kye"><span>4</span>KYE</a>
+	               <a ui-sref-active="active" ui-sref="prevexp"><span>5</span>Prev Exp</a>
+	                 <a ui-sref-active="active" ui-sref="qualification"><span>6</span>Qualification</a>
+	                  <!-- <a ui-sref-active="active" ui-sref="salary"><span>7</span>Salary</a>
+	                  <a ui-sref-active="active" ui-sref="insurance"><span>8</span>Insurance</a> -->
+          </div>
+       
+	      </div>
+	      
+	         
+				<h3 style= "margin-left:40px;">KYE </h3>
+			
+	        
+	   
+	          <div class="addEmployeelabel">
+	          <form class="form-horizontal" name="ae">
+                                
+									  <div class="row">
+										<div class="form-group col-md-6">
+									    <label class="control-label col-md-4" for="employee">Pan Number:<span style="color:Red"> * </span></label>
+									    <div class="col-md-6"> 
+									      <input type="text" class="form-control" ng-model="employee.kyc.panNumber" name="pancard" ng-pattern="/^[A-Za-z]{5}\d{4}[A-Za-z]{1}$/" ng-required="true" placeholder="Enter Pancard"  >
+									      <span style="color:Red"  ng-if="ae.pancard.$error.required && ae.pancard.$dirty">pancard  is required</span>
+                                         <span style="color:Red" ng-show="ae.pancard.$error.pattern">PAN CARd is not valid</span>
+									    </div>
+								  	   </div>
+									  <div class="form-group col-md-6">
+									    <label class="control-label col-md-4" for="employee">Aadhar Number:<span style="color:Red"> * </span></label>
+									    <div class="col-md-6"> 
+									      <input type="text" class="form-control" ng-model="employee.kyc.adharNumber" name="adhar" ng-pattern="/[0-9]{12}/" ng-required="true"  placeholder="Enter Adhar Number" >
+									      <span style="color:Red"  ng-if="ae.adhar.$error.required && ae.adhar.$dirty">Adhar number is required</span>
+                                         <span style="color:Red" ng-show="ae.adhar.$error.pattern">Please Enter the 12 digit aadhar number</span>
+									    </div>
+							  	      </div>
+							  	      </div>
+							  	      <div class="row">
+							  	       <div class="form-group col-md-6">
+									   <label class="control-label col-md-4" for="employee">Name in Passport :<span style="color:Red"> * </span></label>
+									    <div class="col-md-6"> 
+									      <input type="text" class="form-control" ng-model="employee.kyc.passport.nameInPassport"  name="npassport" placeholder="Enter Name in Passport" required />
+									      <span style="color:Red"  ng-if="ae.npassport.$error.required && ae.npassport.$dirty">passport is required</span>
+                                         
+									    </div>
+							  	      </div>
+									  <div class="form-group col-md-6">
+									    <label class="control-label col-md-4" for="employee">Passport Number:<span style="color:Red"> * </span></label>
+									    <div class="col-md-6"> 
+									      <input type="text" class="form-control" ng-model="employee.kyc.passport.passportNumber" ng-pattern="/^([A-PR-WY]){1}([1-9]){1}([0-9]){5}([1-9]){1}$/" name="passportnum" placeholder="Enter Passport Number" required />
+									      <span style="color:Red"  ng-if="ae.passportnum.$error.required && ae.passportnum.$dirty">passport is required</span>
+                                         <span style="color:Red" ng-show="ae.passportnum.$error.pattern">Please Enter valid passport number</span>
+									    </div>
+							  	      </div>
+							  	     
+							  	      </div>
+							  	      <div class="row">
+							  	      <div class="form-group col-md-6">
+									    <label class="control-label col-md-4" for="employee"> Date of issue:<span style="color:Red"> * </span></label>
+									    <div class="col-md-6">
+									      <input type="date" class="form-control" ng-model="employee.kyc.passport.dateOfIssue"  name="datei"  required>
+									      
+					                    <span style="color:Red"  ng-show="ae.datei.$error.required && ae.datei.$touched">select date of issue</span>
+					                
+									    </div>
+										</div>
+										<div class="form-group col-md-6">
+									    <label class="control-label col-md-4" for="employee"> Date of Expiry:<span style="color:Red"> * </span></label>
+									    <div class="col-md-6">
+									      <input type="date" class="form-control" ng-model="employee.kyc.passport.dateOfExpiry"  name="datee" required>
+					                    <span style="color:Red"  ng-show="ae.datee.$error.required && ae.datee.$touched">select date of expiry</span>
+									    </div>
+									</div>
+							  	   </div>
+							  	<!--       <div class="row">
+							  	       <div class="form-group col-md-6">
+									    <label class="control-label col-md-4" for="employee">Place of Issue :<span style="color:Red"> * </span></label>
+									    <div class="col-md-6"> 
+									      <input type="text" class="form-control" ng-model="employee.kyc.passport.nameInPassport" id="passport" name="passportn"  placeholder="Enter Place Of Issue" required>
+									      <span style="color:Red"  ng-if="ae.passportn.$error.required && ae.passportn.$dirty">passport is required</span>
+									    </div>
+							  	      </div>
+									  <div class="form-group col-md-6">
+									    <label class="control-label col-md-4" for="employee">Passport Address:<span style="color:Red"> * </span></label>
+									    <div class="col-md-6"> 
+									      <input type="text" class="form-control" ng-model="employee.kyc.passport.passportNumber" ng-pattern="/^([A-PR-WY]){1}([1-9]){1}([0-9]){5}([1-9]){1}$/" name="passport" placeholder="Enter Passport Address" required />
+									      <span style="color:Red"  ng-if="ae.passport.$error.required && ae.passport.$dirty">passport is required</span>
+                                         <span style="color:Red" ng-show="ae.passport.$error.pattern">Please Enter valid passport number</span>
+									    </div>
+							  	      </div>
+							  	     
+							  	      </div> 
+							  	   
+							  	      <div class="row">
+							  	       <div class="form-group col-md-6">
+									    <label class="control-label col-md-4" for="employee">HDFC_AC status :<span style="color:Red"> * </span></label>
+									    <div class="col-md-6"> 
+									      <input type="text" class="form-control" ng-model="employee.kyc.passport.nameInPassport" id="passport" name="passportn"  placeholder="Enter HDFC Status" required>
+									      <span style="color:Red"  ng-if="ae.passportn.$error.required && ae.passportn.$dirty">passport is required</span>
+									    </div>
+							  	      </div>
+									  <div class="form-group col-md-6">
+									    <label class="control-label col-md-4" for="employee">HDFC_AC No:<span style="color:Red"> * </span></label>
+									    <div class="col-md-6"> 
+									      <input type="text" class="form-control" ng-model="employee.kyc.passport.passportNumber" ng-pattern="/^([A-PR-WY]){1}([1-9]){1}([0-9]){5}([1-9]){1}$/" name="passport" placeholder="Enter HDFC AccountNo" required />
+									      <span style="color:Red"  ng-if="ae.passport.$error.required && ae.passport.$dirty">passport is required</span>
+                                         <span style="color:Red" ng-show="ae.passport.$error.pattern">Please Enter valid passport number</span>
+									    </div>
+							  	      </div>
+							  	     
+							  	      </div>
+							  	       <div class="row">
+							  	       <div class="form-group col-md-6">
+									    <label class="control-label col-md-4" for="employee">HDFC_AC No ReEnter:<span style="color:Red"> * </span></label>
+									    <div class="col-md-6"> 
+									      <input type="text" class="form-control" ng-model="employee.kyc.passport.nameInPassport" id="passport" name="passportn"  placeholder="ReEnter HDFC AccountNo" required>
+									      <span style="color:Red"  ng-if="ae.passportn.$error.required && ae.passportn.$dirty">passport is required</span>
+									    </div>
+							  	      </div>
+									  <div class="form-group col-md-6">
+									    <label class="control-label col-md-4" for="employee">Bank Name:<span style="color:Red"> * </span></label>
+									    <div class="col-md-6"> 
+									      <input type="text" class="form-control" ng-model="employee.kyc.passport.passportNumber" ng-pattern="/^([A-PR-WY]){1}([1-9]){1}([0-9]){5}([1-9]){1}$/" name="passport" placeholder="Enter Bank Name" required />
+									      <span style="color:Red"  ng-if="ae.passport.$error.required && ae.passport.$dirty">passport is required</span>
+                                         <span style="color:Red" ng-show="ae.passport.$error.pattern">Please Enter valid passport number</span>
+									    </div>
+							  	      </div>
+							  	     
+							  	      </div>
+							  	      <div class="row">
+							  	       <div class="form-group col-md-6">
+									    <label class="control-label col-md-4" for="employee">City:<span style="color:Red"> * </span></label>
+									    <div class="col-md-6"> 
+									      <input type="text" class="form-control" ng-model="employee.kyc.passport.nameInPassport" id="passport" name="passportn"  placeholder="Enter Bank Location" required>
+									      <span style="color:Red"  ng-if="ae.passportn.$error.required && ae.passportn.$dirty">passport is required</span>
+									    </div>
+							  	      </div>
+									  <div class="form-group col-md-6">
+									    <label class="control-label col-md-4" for="employee">Bank Branch:<span style="color:Red"> * </span></label>
+									    <div class="col-md-6"> 
+									      <input type="text" class="form-control" ng-model="employee.kyc.passport.passportNumber" ng-pattern="/^([A-PR-WY]){1}([1-9]){1}([0-9]){5}([1-9]){1}$/" name="passport" placeholder="Enter Branch" required />
+									      <span style="color:Red"  ng-if="ae.passport.$error.required && ae.passport.$dirty">passport is required</span>
+                                         <span style="color:Red" ng-show="ae.passport.$error.pattern">Please Enter valid passport number</span>
+									    </div>
+							  	      </div>
+							  	     
+							  	      </div>
+							  	       <div class="row">
+							  	       <div class="form-group col-md-6">
+									    <label class="control-label col-md-4" for="employee">Bank IFSC:<span style="color:Red"> * </span></label>
+									    <div class="col-md-6"> 
+									      <input type="text" class="form-control" ng-model="employee.kyc.passport.nameInPassport" id="passport" name="passportn"  placeholder="Enter IFSC" required>
+									      <span style="color:Red"  ng-if="ae.passportn.$error.required && ae.passportn.$dirty">passport is required</span>
+									    </div>
+							  	      </div>
+									  <div class="form-group col-md-6">
+									    <label class="control-label col-md-4" for="employee">Bank_ACC No:<span style="color:Red"> * </span></label>
+									    <div class="col-md-6"> 
+									      <input type="text" class="form-control" ng-model="employee.kyc.passport.passportNumber" ng-pattern="/^([A-PR-WY]){1}([1-9]){1}([0-9]){5}([1-9]){1}$/" name="passport" placeholder="Enter bANK AccountNo" required />
+									      <span style="color:Red"  ng-if="ae.passport.$error.required && ae.passport.$dirty">passport is required</span>
+                                         <span style="color:Red" ng-show="ae.passport.$error.pattern">Please Enter valid passport number</span>
+									    </div>
+							  	      </div>
+							  	     
+							  	      </div>-->
+								
+							
+									
+	<div class="form-group">
+		<div class="col-md-11">
+			<button type="button" class="btn btn-primary pull-right" ui-sref="prevexp">Next Section</button>
+			<button type="button" class="btn btn-primary " ui-sref="jobinfo">Back</button>
+		</div>
+	</div>
+</form>
+	   	</div>
+	  
+	  </div>
+	  	
+	</div>
+	
+    
+    </div>
+</div>
+	
+    </div>
+    	
+		

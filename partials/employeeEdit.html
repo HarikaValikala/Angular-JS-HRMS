@@ -1,0 +1,395 @@
+<div class="wrapper">
+	<top-dir></top-dir>
+	<side-dir></side-dir>
+	<div class="content">
+		<div class="container">
+			<div class=" Emp_mar_top "></div>
+			<div class="row">
+				<h3 class="pull-left" style="color: #192766; margin-top: 0px;">Edit
+					Employee </h3>
+			</div>
+			<div class="addEmployeelabel ">
+				<form class="form-horizontal" name="ae">
+				                <div ng-model="employee.id"></div>
+								<div class="form-group">
+								    <label class="control-label col-sm-2" for="employee">Employee Id:</label>
+								    <div class="col-sm-6">
+								      <input type="text" class="form-control" ng-model="employee.employeeId" name="empid" id="eid" ng-pattern="/^[0-9]/" required>
+								       <span  style="color:Red"  ng-if="ae.empid.$error.required && ae.empid.$dirty">employee id is required </span>
+							          <span  style="color:Red"  ng-show="ae.empid.$error.pattern">enter valid id</span>
+								      <span>
+								    </div>
+							  	</div>
+							  	<div class="form-group">
+								    <label class="control-label col-sm-2" for="employee">Full Name:</label>
+								    
+							  	<div class="col-md-6">
+							  	
+									  <div class="col-md-4">
+									    <div >
+									      <input type="text" class="form-control" ng-model="employee.firstName" placeholder="First name" name="empfn"   required/>
+									      <span  style="color:Red"  ng-if="ae.empfn.$error.required && ae.empfn.$dirty">first name is required </span>
+							           		
+									    </div>
+									  </div><!-- /.col -->
+									  <div class="col-md-4">
+									    <div >
+									      <input type="text" class="form-control" ng-model="employee.middleName"  />
+									    </div>
+									  </div><!-- /.col -->
+									  <div class="col-md-4">
+									    <div >
+									      <input type="text" class="form-control" ng-model="employee.lastName" placeholder="Last name" name="empln"   placeholder="last name" required/>
+									      <span  style="color:Red"  ng-if="ae.empln.$error.required && ae.empln.$dirty">last name is required </span>
+							           		 
+									    </div>
+									  </div><!-- /.col -->
+									</div><!-- /.row -->
+							  	</div>
+								<div class="form-group">
+								    <label class="control-label col-md-2" for="employee">Employee Name:</label>
+								    <div class="col-sm-6">
+								      <input type="text" class="form-control" ng-model="employee.employeeName" id="jobtitle" name="empname"  placeholder="Employee name" required>
+								      <span  style="color:Red"  ng-if="ae.empname.$error.required && ae.empname.$dirty">last name is required </span>
+							           	  
+								    </div>
+								</div>
+								
+								<div class="row">
+								<div class="form-group col-md-6 ">
+									<label class="control-label col-md-4" for="employee">Employee:</label>
+								 	<div class="col-md-6">
+										<label class="radio-inline">
+									      <input type="radio" ng-model="employee.fresher" ng-value="true" name="empty" required/>fresher
+									      <span  style="color:Red"  ng-show="ae.empty.$error.required && ae.empty.$dirty">employee type is required </span>
+									    </label>
+									</div>
+								</div>
+								<div class="form-group col-md-6">
+								    <label class="control-label col-md-4" for="employee"> Date of Joining:</label>
+								    <div class="col-md-6">
+								      <input type="date" class="form-control" ng-model="employee.dateOfJoining" id="startdate" name="datej"   required >
+                                       <span style="color:Red"  ng-show="ae.datej.$error.required && ae.datej.$dirty">select date of joining</span>
+								      
+								    </div>
+								</div>
+								</div>
+								
+								<div class="row">
+								
+								<div class="form-group col-md-6">
+								    <label class="control-label col-md-4" for="employee"> Date of Birth:</label>
+								    <div class="col-md-6">
+								      <input type="date" class="form-control" ng-model="employee.dateOfBirth" name="dateb" required/ >
+								      <span style="color:Red"  ng-show="ae.dateb.$error.required && ae.dateb.$dirty">select date of Birth</span>
+			
+								    </div>
+								</div>
+								<div class="form-group col-md-6">
+								    <label class="control-label col-md-4" for="employee">Business Unit:</label>
+								    <div class="col-md-6">
+								     <select class='form-control' ng-model="employee.businessUnit.id"  ng-options="detail.id as detail.nameOfBusinessUnit for detail in budetails" ng-change="subbusunit(employee.subBusinessUnit.bussinessUnitId)" name="busin" required>
+							  			</select>
+							  			<span style="color:Red"  ng-show="ae.busin.$error.required && ae.busin.$touched">Business Unit is Required!</span>
+								    </div>
+								</div>
+								</div>
+								<div class="row">
+								<div class="form-group col-md-6">
+								    <label class="control-label col-md-4" for="employee">Sub business Unit :</label>
+								    <div class="col-md-6">
+								      <select class='form-control' ng-model="employee.subBusinessUnit.id"  ng-options="detail.id as detail.subBusinessUnitName for detail in sbudetails" ng-change="teamBusunit(employee.subBusinessUnit.id)" name="subusin" required/>
+							  			</select>
+							  			<span style="color:Red"  ng-show="ae.subusin.$error.required && ae.subusin.$touched">Subbusiness Unit is Required!</span>
+								    </div>
+								</div>
+								<div class="form-group col-md-6">
+								  	<label for="employee" class="control-label col-md-3">Team:</label>
+								  	<div class="col-md-6">
+											<select class='form-control' ng-model="employee.team.id"  ng-options="detail.id as detail.nameOfTheTeam for detail in teamlist"  ng-change="teamdesig(employee.team.id)" name="team" required >
+							  			</select>
+							  			 <span style="color:Red"  ng-show="ae.team.$error.required && ae.team.$touched">team is Required!</span>
+									</div>
+								</div>
+								</div>
+								<div class="row">
+								<div class="form-group col-md-6">
+								  	<label for="employee" class="control-label col-md-4">Designation:</label>
+								  	<div class="col-md-6">
+										<select class='form-control' ng-model="employee.designation.id"   ng-options="detail.id as detail.designation for detail in getdesiglist" name="desig" required >
+										</select>
+										<span style="color:Red"  ng-show="ae.desig.$error.required && ae.desig.$touched">designation is Required!</span>
+									</div>
+								</div>
+								<div class="form-group col-md-6">
+								  	<label for="employee" class="control-label col-md-3">Resource:</label>
+								  	<div class="col-md-6">
+										 <select class="form-control" ng-model="employee.resourceType.id" ng-options="detail.id as detail.resourceType for detail in resourceList" ng-change="getList(employee.resourceType.id)" name="resource" required>
+										</select> 
+										<span style="color:Red"  ng-show="ae.resource.$error.required && ae.resource.$touched">resource is Required!</span>
+									</div>
+								</div>
+								</div>
+								<div class="row">
+								<div class="form-group col-md-6">
+								    <label class="control-label col-md-4" for="employee">Bond Type:</label>
+								    <div class="col-md-6"> 
+								       <select class="form-control" ng-model="employee.bondType.id" ng-options="detail.id as detail.bondType for detail in getBondlist" ng-change="getBondType(employee.bondType.id)" name="bond" required>
+										</select> 
+										<span style="color:Red"  ng-show="ae.bond.$error.required && ae.bond.$touched">bond is Required!</span>
+								    </div>
+							  	</div>
+								<div class="form-group col-md-6 ">
+								  	<label for="employee" class="control-label col-md-3">Maratial status:</label>
+								  	<div class="col-md-6">
+										<select class="form-control" ng-model="employee.maritalStatus" id="team" name="maratial" required>
+										<option>single</option>
+										<option>married</option>
+										<option>Devorse</option>
+										</select>
+										<span style="color:Red"  ng-show="ae.maratial.$error.required && ae.maratial.$touched">maratial status is Required!</span>
+									</div>
+								</div>
+								</div>
+								<div class="row">
+								<div class="form-group col-md-6">
+								    <label class="control-label col-md-4" for="employee">Father Name:</label>
+								    <div class="col-md-6"> 
+								      <input type="text" class="form-control" ng-model="employee.fatherName"  name="faname" ng-pattern="/^[a-zA-Z\s]*$/" placeholder="Father name" required  >
+								       <span  style="color:Red"  ng-if="ae.faname.$error.required && ae.faname.$dirty">Father name is required </span>
+							           <span  style="color:Red"  ng-show="ae.faname.$error.pattern">only strings are allowed</span>
+								    </div>
+							  	</div>
+							  	<div class="form-group col-md-6">
+								    <label class="control-label col-md-3" for="employee">Mother Name:</label>
+								    <div class="col-md-6"> 
+								      <input type="text" class="form-control" ng-model="employee.motherName" placeholder="Mother name" name="mname" ng-pattern="/^[a-zA-Z\s]*$/"  ng-required="true" >
+								      <span  style="color:Red"  ng-if="ae.mname.$error.required && ae.mname.$dirty">Mother name is a required</span>
+							          <span  style="color:Red"  ng-show="ae.mname.$error.pattern">only strings are allowed</span>
+								    </div>
+							  	</div>
+							  	</div>
+							  	<div class="row">
+									<div class="form-group col-md-6">
+								    <label class="control-label col-md-4" for="employee">Official EmailId:</label>
+								    <div class="col-sm-6"> 
+								      <input type="email" class="form-control" ng-model="employee.officialMailId" id="oemail" ng-pattern="/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/"  name="oemail" ng-required="true" >
+								       <span  style="color:Red"  ng-if="ae.oemail.$error.required && ae.oemail.$dirty">Email is a required field</span>
+							            <span  style="color:Red"  ng-show="ae.oemail.$error.pattern">Invalid Email</span>
+								    </div>
+							  	</div>
+							  		<div class="form-group col-md-6">
+								    <label class="control-label col-md-3" for="employee">Personal EmailId:</label>
+								    <div class="col-sm-6"> 
+								      <input type="email" class="form-control" ng-model="employee.personnelMailId" id="pemail" name="pemail" ng-pattern="/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/" ng-required="true">
+								       <span  style="color:Red"  ng-if="ae.pemail.$error.required && ae.pemail.$dirty">Email is a required field</span>
+							           <span  style="color:Red"  ng-show="ae.pemail.$error.pattern">Invalid Email</span>
+								    </div>
+							  	</div>
+							  	</div>
+							  	<div class="row">
+							  		<div class="form-group col-md-6">
+								    <label class="control-label col-md-4" for="employee">contactNo:</label>
+								    <div class="col-md-6">
+								      <input type="text" class="form-control" ng-model="employee.employeeContactNo" name="contact" ng-pattern="/^\+?\d{10}$/" ng-required="true"  placeholder="contact no">
+								      <span style="color:Red"  ng-if="ae.contact.$error.required && ae.contact.$dirty">Contact number is a required field</span>
+                                      <span style="color:Red" ng-show="ae.contact.$error.pattern">Please enter a 10 digit number</span>
+								    </div>
+								     </div>
+								     <div class="form-group col-md-6">
+								    <label class="control-label col-md-4" for="employee">emergency contactNo:</label>
+								    <div class="col-md-6">
+								      <input type="text" class="form-control" ng-model="employee.parentContactNumber"  name="econtact" ng-pattern="/^\+?\d{10}$/" ng-required="true"  placeholder="contact no">
+								       <span style="color:Red"  ng-if="ae.econtact.$error.required && ae.econtact.$dirty">Contact number is a required field</span>
+                                      <span style="color:Red" ng-show="ae.econtact.$error.pattern">Please enter a 10 digit number</span>
+								    </div>
+								     </div>
+								 </div>
+									  <legend>KYC:</legend>
+									  <div class="row">
+										<div class="form-group col-md-6">
+									    <label class="control-label col-md-4" for="employee">Pan Number:</label>
+									    <div class="col-md-6"> 
+									      <input type="text" class="form-control" ng-model="employee.kyc.panNumber"  name="pancard" ng-pattern="/^[A-Za-z]{5}\d{4}[A-Za-z]{1}$/" ng-required="true">
+									      <span style="color:Red"  ng-if="ae.pancard.$error.required && ae.pancard.$dirty">pancard  is required</span>
+                                         <span style="color:Red" ng-show="ae.pancard.$error.pattern">PAN CARd is not valid</span>
+									    </div>
+								  	   </div>
+									  <div class="form-group col-md-6">
+									    <label class="control-label col-md-3" for="employee">Adhar Number:</label>
+									    <div class="col-md-6"> 
+									      <input type="text" class="form-control" ng-model="employee.kyc.adharNumber" name="adhar" ng-pattern="/[0-9]{12}/" ng-required="true" >
+									      <span style="color:Red"  ng-if="ae.adhar.$error.required && ae.adhar.$dirty">Adhar number is required</span>
+                                         <span style="color:Red" ng-show="ae.adhar.$error.pattern">Please Enter the 12 digit aadhar number</span>
+									    </div>
+							  	      </div>
+							  	      </div>
+							  	      <div class="row">
+									  <div class="form-group col-md-6">
+									    <label class="control-label col-md-4" for="employee">Passport Number:</label>
+									    <div class="col-md-6"> 
+									      <input type="text" class="form-control" ng-model="employee.kyc.passport.passportNumber" ng-pattern="/^([A-PR-WY]){1}([1-9]){1}([0-9]){5}([1-9]){1}$/" name="passport" required>
+									      <span style="color:Red"  ng-if="ae.passport.$error.required && ae.passport.$dirty">passport is required</span>
+                                         <span style="color:Red" ng-show="ae.passport.$error.pattern">Please Enter valid passport number</span>
+									    </div>
+							  	      </div>
+							  	      <div class="form-group col-md-6">
+									    <label class="control-label col-md-3" for="employee">Name in Passport:</label>
+									    <div class="col-md-6"> 
+									      <input type="text" class="form-control" ng-model="employee.kyc.passport.nameInPassport" id="passport" name="passportn" placeholder="enter name in passport" required >
+									      <span style="color:Red"  ng-if="ae.passportn.$error.required && ae.passportn.$dirty">passport is required</span>
+                                         <span style="color:Red" ng-show="ae.passportn.$error.pattern">only strings are allowed</span>
+									    </div>
+							  	      </div>
+							  	      </div>
+							  	      <div class="row">
+							  	      <div class="form-group col-md-6">
+									    <label class="control-label col-md-4" for="employee"> Date of issue:</label>
+									    <div class="col-md-6">
+									      <input type="date" class="form-control" ng-model="employee.kyc.passport.dateOfIssue" id="dateofissue" name="datei"  required>
+									      <span style="color:Red"  ng-show="ae.datei.$error.required && ae.datei.$touched">select date of issue</span>
+									    </div>
+										</div>
+										<div class="form-group col-md-6">
+									    <label class="control-label col-md-3" for="employee"> Date of Expiry:</label>
+									    <div class="col-md-6">
+									      <input type="date" class="form-control" ng-model="employee.kyc.passport.dateOfExpiry" id="dateofexpiry" name="datee" required>
+									      <span style="color:Red"  ng-show="ae.datee.$error.required && ae.datee.$touched">select date of expiry</span>
+									    </div>
+									</div>
+							  	   </div>
+							  	   <div class= "row">
+							  	   <div class="col-md-6">
+							  	    <legend>Current Address:</legend>
+							  	    <div class="form-group">
+									    <label class="control-label col-md-3" for="employee">Address 1:</label>
+									    <div class="col-md-6"> 
+									      <input type="text" class="form-control" ng-model="employee.currentAddress.address1"  name="caddress1" ng-pattern="/^[a-zA-Z\s]*$/" required>
+									      <span  style="color:Red"  ng-show="ae.caddress1.$error.required && ae.caddress1.$dirty">Address is required </span>
+									    </div>
+							  	      </div>
+							  	      <div class="form-group">
+									    <label class="control-label col-md-3" for="employee">Address 2:</label>
+									    <div class="col-md-6"> 
+									      <input type="text" class="form-control" ng-model="employee.currentAddress.address2" name="caddress2" ng-pattern="/^[a-zA-Z\s]*$/" required >
+									      <span  style="color:Red"  ng-show="ae.caddress2.$error.required && ae.caddress2.$dirty">Address is required </span>
+									    </div>
+							  	      </div>
+							  	      <div class="form-group">
+									    <label class="control-label col-md-3" for="employee">Address 3:</label>
+									    <div class="col-md-6"> 
+									      <input type="text" class="form-control" ng-model="employee.currentAddress.address3" name="caddress3" >
+									       <span  style="color:Red"  ng-show="ae.caddress3.$error.required && ae.caddress3.$dirty">Address is required </span>
+									      
+									    </div>
+							  	      </div>
+							  	      <div class="form-group">
+									    <label class="control-label col-md-3" for="employee">City:</label>
+									    <div class="col-md-6"> 
+									      <input type="text" class="form-control" ng-model="employee.currentAddress.city"   name="cityc" ng-pattern="/^[a-zA-Z\s]*$/" ng-required="true">
+									      <span style="color:Red"  ng-if="ae.cityc.$error.required && ae.cityc.$dirty">Adhar number is required</span>
+                                         <span style="color:Red" ng-show="ae.cityc.$error.pattern">Please Enter valid city</span>
+									    </div>
+							  	      </div>
+							  	      <div class="form-group">
+									    <label class="control-label col-md-3" for="employee">State:</label>
+									    <div class="col-md-6"> 
+									      <input type="text" class="form-control" ng-model="employee.currentAddress.state" name="statec"  ng-pattern="/^[a-zA-Z\s]*$/" ng-required="true" >
+									       <span style="color:Red"  ng-if="ae.statec.$error.required && ae.statec.$dirty">state is required</span>
+                                         <span style="color:Red" ng-show="ae.statec.$error.pattern">Please Enter valid state</span>
+									    </div>
+							  	      </div>
+							  	      <div class="form-group">
+									    <label class="control-label col-md-3" for="employee">Pincode:</label>
+									    <div class="col-md-6"> 
+									      <input type="text" class="form-control" ng-model="employee.currentAddress.pincode"  name="cpincode" ng-pattern="/^[1-9][0-9]{5}$/" ng-required="true">
+									      <span style="color:Red"  ng-if="ae.cpincode.$error.required && ae.cpincode.$dirty">pincode  is required</span>
+                                         <span style="color:Red" ng-show="ae.cpincode.$error.pattern">pincode is not valid</span>
+									    </div>
+							  	      </div>
+							  	      <div class="form-group">
+									    <label class="control-label col-md-3" for="employee">Country:</label>
+									    <div class="col-md-6"> 
+									      <input type="text" class="form-control" ng-model="employee.currentAddress.country"   name="countryc" name="cpincode" ng-pattern="/^[a-zA-Z\s]*$/" ng-required="true" >
+									      <span style="color:Red"  ng-if="ae.countryc.$error.required && ae.countryc.$dirty">country is required</span>
+                                         <span style="color:Red" ng-show="ae.countryc.$error.pattern">Please Enter valid country</span>
+									    </div>
+							  	      </div>
+							  	      
+							  	      </div>
+							  	      <div class="col-md-6">
+							  	    <legend>Permanent Address:</legend>
+							  	    <div class="form-group">
+									    <label class="control-label col-md-3" for="employee">Address 1:</label>
+									    <div class="col-md-6"> 
+									      <input type="text" class="form-control" ng-model="employee.permanentAddress.address1" name="paddress1" ng-pattern="/^[a-zA-Z\s]*$/" ng-required="true" >
+									      <span  style="color:Red"  ng-show="ae.paddress1.$error.required && ae.paddress1.$dirty">Address1 is required </span>
+									    </div>
+							  	      </div>
+							  	      <div class="form-group">
+									    <label class="control-label col-md-3" for="employee">Address 2:</label>
+									    <div class="col-md-6"> 
+									      <input type="text" class="form-control" ng-model="employee.permanentAddress.address2" name="paddress2" ng-pattern="/^[a-zA-Z\s]*$/" ng-required="true" >
+									      <span  style="color:Red"  ng-show="ae.paddress2.$error.required && ae.paddress2.$dirty">Address2 is required </span>
+									    </div>
+							  	      </div>
+							  	      <div class="form-group">
+									    <label class="control-label col-md-3" for="employee">Address 3:</label>
+									    <div class="col-md-6"> 
+									      <input type="text" class="form-control" ng-model="employee.permanentAddress.address3" name="paddress3" ng-pattern="/^[a-zA-Z\s]*$/" >
+									      <span  style="color:Red"  ng-show="ae.paddress3.$error.required && ae.paddress3.$dirty">Address2 is required </span>
+									    </div>
+							  	      </div>
+							  	      <div class="form-group">
+									    <label class="control-label col-md-3" for="employee">City:</label>
+									    <div class="col-md-6"> 
+									      <input type="text" class="form-control" ng-model="employee.permanentAddress.city" name="cityp" ng-pattern="/^[a-zA-Z\s]*$/" ng-required="true"  >
+									      <span style="color:Red"  ng-if="ae.cityp.$error.required && ae.cityp.$dirty">city is required</span>
+                                         <span style="color:Red" ng-show="ae.cityp.$error.pattern">Please Enter valid city</span>
+									    </div>
+							  	      </div>
+							  	      <div class="form-group">
+									    <label class="control-label col-md-3" for="employee">State:</label>
+									    <div class="col-md-6"> 
+									      <input type="text" class="form-control" ng-model="employee.permanentAddress.state"  name="statep" ng-pattern="/^[a-zA-Z\s]*$/" ng-required="true">
+									      <span style="color:Red"  ng-if="ae.statep.$error.required && ae.statep.$dirty">state is required</span>
+                                         <span style="color:Red" ng-show="ae.statep.$error.pattern">only strings are allowed</span>
+									    </div>
+							  	      </div>
+							  	      <div class="form-group">
+									    <label class="control-label col-md-3" for="employee">Pincode:</label>
+									    <div class="col-md-6"> 
+									      <input type="text" class="form-control" ng-model="employee.permanentAddress.pincode" name="ppincode" ng-pattern="/^[1-9][0-9]{5}$/" ng-required="true" >
+									      <span style="color:Red"  ng-if="ae.ppincode.$error.required && ae.ppincode.$dirty">pincode is required</span>
+                                          <span style="color:Red" ng-show="ae.ppincode.$error.pattern">pincode is not valid</span>
+									    </div>
+							  	      </div>
+							  	      <div class="form-group">
+									    <label class="control-label col-md-3" for="employee">Country:</label>
+									    <div class="col-md-6"> 
+									      <input type="text" class="form-control" ng-model="employee.permanentAddress.country"  name="countryp" ng-pattern="/^[a-zA-Z\s]*$/" ng-required="true">
+									      <span style="color:Red"  ng-if="ae.countryp.$error.required && ae.countryp.$dirty">country name is required</span>
+                                         <span style="color:Red" ng-show="ae.countryp.$error.pattern">only strings are allowed</span>
+									    </div>
+							  	      </div>
+							  	      
+							  	      </div>
+							  	   </div>
+								 
+								
+								<div class="clearfix"></div>
+
+							</form>
+							
+				 <div>
+				  <button type="button" ui-sref="employeeTable" class="btn btn-primary btn_mar_top">Back</button>
+				 <button type="button" class="btn btn-primary  btn_mar_top"  ng-click="employeegetid()">Reset</button>
+					<button type="button" class="btn btn-primary pull-right btn_mar_top" ng-click="empEditreq()">Save</button>
+				</div>
+				 
+			</div>
+			
+		
+	</div>
+	</div>
+</div>

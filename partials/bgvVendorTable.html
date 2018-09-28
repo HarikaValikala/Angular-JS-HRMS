@@ -1,0 +1,53 @@
+<div class="wrapper">
+	<top-dir></top-dir>
+	<side-dir></side-dir>
+	<div class="content">
+		<div class="container">
+			<div class=" btn_mar_top ">
+				<div class="row">
+					<h3 class="pull-left head_change">bgv Vendor</h3>
+					<div class="col-md-offset-2 col-md-8">
+						<form class="form-inline">
+							<div class="input-group">
+								<input type="text" ng-model="search" class="form-control" size="50" placeholder="Search" ng-change="bgvVAdvance(search)" required>
+								<div class="input-group-btn">
+									<button type="button" class="btn btn-primary">Search</button>
+								</div>
+							</div>
+						</form>
+					</div>
+				</div>
+				<div class="addEmployeelabel">
+					<table class="table table-consider ">
+	
+						<tr>
+							<th>BGV Vendor</th>
+							<th>Edit</th>
+							<th>Delete</th>
+						</tr>
+	
+						<tr ng-repeat="bgvVen in bgvVList | filter: bgvVSearch.vendor">
+							<td>{{bgvVen.vendor}}</td>
+							<td><a ui-sref="bgvVendorEdit({bgvVId:bgvVen.id})"><img src="images/Edit.png"></a></td>
+							<td><a ng-click="bgvVDelete(bgvVen.id)"><img src="images/Trash.png"></a></td>
+						</tr>
+							 
+					</table>
+					<div>
+						<a ui-sref="bgvVendorAdd"><button type="button" class="btn btn-primary pull-right ">Add</button></a>
+					</div>
+					<div align="center"  colspan="6">
+						<div class="text-center">
+							<pagination total-items="totalCount" ng-change="pageChanged()"
+														items-per-page="pageSizeSelected" direction-links="true"
+														ng-model="pageIndex" max-size="maxSize" class="pagination pag_change"
+														boundary-links="true" rotate="false" num-pages="numPages">
+							</pagination>
+													
+						</div>
+					</div>
+				</div> 
+			</div>
+		</div>
+	</div>
+</div>

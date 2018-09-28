@@ -1,0 +1,36 @@
+<div class="wrapper">
+	<top-dir></top-dir>
+		<side-dir></side-dir>
+		<div class="content">
+				<div class="container">
+					<div class="col-md-offset-2 col-md-8">
+						<div class="Emp_mar_top addEmployeelabel">
+							<h3 class="head_change">Project Status</h3>
+							<form name="projectstatus" class="btn_mar_top">
+								<div  class="form-group row">
+									<label for="bondType" class="control-label col-md-3"> Project Status : </label>
+									<div class="col-md-9">
+										<input type="text" class="form-control" ng-model="statusGetList.status" name="pstatus" required/>
+										<div class="has-error" ng-show="projectstatus.pstatus.$dirty" >
+					                    	<span style="color:Red" class="error" ng-show="projectstatus.pstatus.$error.required"> Project Status is Required !</span>
+					                  	</div>
+									</div>
+								</div>
+												
+							</form>
+								<div class="col-md-12">
+									<button type="button" ui-sref="projectStatusTable" class="btn btn-primary btn_mar_top">Back</button>
+									
+									
+									<button type="button" class="btn btn-primary pull-right btn_mar_top" ng-click="statusById()">Reset</button>
+								
+									<button type="button" class="btn btn-primary pull-right btn_mar_top" ng-click="statusEdit()" ng-disabled="projectstatus.$invalid">Update</button>
+								</div>
+			
+							
+							</div>
+						</div>
+					</div>
+				</div>
+		</div>
+</div>

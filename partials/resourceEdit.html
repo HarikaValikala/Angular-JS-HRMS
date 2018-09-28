@@ -1,0 +1,26 @@
+<div class="wrapper">
+	<top-dir></top-dir>
+		<side-dir></side-dir>
+		<div class="content">
+				<div class="container">
+					<div class="col-md-offset-2 col-md-8">
+							<div class="Emp_mar_top addEmployeelabel">
+							<h3 class="head_change">Resource</h3>
+							<div class="btn_mar_top">
+							<div class="form-group btn_mar_top">
+								<label for="costCenter" class="control-label col-md-3">Resource : </label>
+								<div class="col-md-9">
+									<input type="text" class="form-control" ng-model="resource.resourceType"/>
+								</div>
+							</div>
+							<div class="col-md-12">
+									<button type="button" ui-sref="resourceTable" class="btn btn-primary btn_mar_top">Back</button>
+									<button type="button" class="btn btn-primary pull-right btn_mar_top"  ng-click="resourceGetById()">Reset</button>
+									<button type="button" class="btn btn-primary pull-right btn_mar_top" ng-click="resourceEditList()">Update</button>
+								</div>
+							
+						</div>
+					</div>
+				</div>
+		</div>
+</div>

@@ -1,0 +1,83 @@
+<div class="wrapper">
+	<top-dir></top-dir>
+		<side-dir></side-dir>
+		<div class="content">
+				<div class="container">
+					<div class="col-md-offset-1 col-md-10">
+						<div class="Emp_mar_top addEmployeelabel">
+							<h3 class="head_change">Bond Type</h3>
+							<div class="btn_mar_top">
+							<form name="bondtype">
+								<div  class="form-group row">
+									<label for="tag" class="control-label col-md-3"> Bond Type Name : <span style="color:Red">*</span></label>
+									<div class="col-md-9">
+										<input type="text" class="form-control" ng-model="tag.bondType" name="bond" placeholder="Enter Bond Type" required/>
+										 <div class="has-error" ng-show="bondtype.bond.$dirty" >
+					                    	<span style="color:Red" class="error" ng-show="bondtype.bond.$error.required"> Bond Type is Required !</span>
+					                  	</div>
+									</div>
+								</div>
+								<div  class="form-group row">
+									<label for="contract" class="control-label col-md-3"> Contract Period : <span style="color:Red">*</span></label>
+									<div class="col-md-9">
+										<select type="text" class="form-control" ng-model="tag.contractPeriod.id" name="contract"  placeholder="Enter Bond Type" ng-options="list.id as list.contractPeriod for list in cplist" ng-change="contractperiodList(tag.contractPeriod.id)" required>
+											<option value="">Choose an option</option>
+										
+										</select>
+									</div>
+								</div>
+								<div  class="form-group row">
+									<label for="salarySlab" class="control-label col-md-3"> Salary Slab Based :  <span style="color:Red">*</span></label>
+									<div class="col-md-1">
+										<input type="checkbox" ng-model="tag.salarySlabBased" name="salaryslab" ng-change="ShowHide()" required/>
+										<div class="has-error" ng-show="bondtype.salaryslab.$dirty" >
+					                    	<span style="color:Red" class="error" ng-show="bondtype.salaryslab.$error.required"> Bond Type is Required !</span>
+					                  	</div>
+							
+									</div>
+								</div>
+								<div ng-show="IsVisible">
+								<div ng-repeat="tag in tag.salaries">
+									
+										<div class="row col-sm-12">
+											<div class="col-md-3">
+												<label>Starting Date:  <span style="color:Red">*</span></label>
+												<input type="date" class="form-control" ng-model="tag.startDate" name="sDate" required  />
+												<div class="has-error" ng-show="bondtype.sDate.$dirty" >
+					                    	<span style="color:Red" class="error" ng-show="bondtype.sDate.$error.required"> Start Date is Required !</span>
+					                  	</div>
+											</div>
+											<div class="col-md-3">
+												<label>Ending Date:  <span style="color:Red">*</span></label>
+												<input type="date" class="form-control" ng-model="tag.endDate" name="eDate" ng-change='checkErr(tag.startDate,tag.endDate)' required  />
+												<div class="has-error" ng-show="bondtype.eDate.$dirty" >
+					                    			<span style="color:Red" class="error" ng-show="bondtype.eDate.$error.required"> End Date is Required !</span>
+					                  			</div>
+											</div>
+											<div class="col-md-3">
+												<label>Salary:  <span style="color:Red">*</span></label>
+												<input type="number" class="form-control" ng-model="tag.salaryAmount" name="salary" required  />
+												<div class="has-error" ng-show="bondtype.salary.$dirty" >
+					                    	<span style="color:Red" class="error" ng-show="bondtype.salary.$error.required"> Salary Amount is Required !</span>
+					                  	</div>
+											</div>
+											
+				
+											<button class="btn" ng-click="addNewColumn()">+</button>
+											<button class="btn"  ng-click="removeColumn($index)">x</button> 
+														      
+										</div>
+									</div>
+								</div>
+								</form>
+								</div>
+								<div class="col-md-12">
+									<button type="button" ui-sref="bondTypeTable" class="btn btn-primary btn_mar_top">Back</button>	
+									<button type="button" class="btn btn-primary pull-right btn_mar_top" ng-click="bondTypePost()" >Save</button>
+								</div>
+								
+						</div>
+					</div>
+				</div>
+			</div>
+	</div>

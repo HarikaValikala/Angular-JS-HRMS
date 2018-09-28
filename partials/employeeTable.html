@@ -1,0 +1,63 @@
+<div class="wrapper">
+	<top-dir></top-dir>
+		<side-dir></side-dir>
+		<div class="content">
+				<div class="container">
+					<div class="btn_mar_top ">		
+					
+						<div class="row">
+						<h3 class="pull-left head_change">Employee Table</h3>
+						<div class="col-md-offset-2 col-md-6">
+							<form class="form-inline">
+				            	<div class="input-group">
+					    	        <input type="text" ng-model="search" class="form-control" size="50" placeholder="Search requirement" ng-change="empnameAdvance(search)" required>
+					                <div class="input-group-btn">
+					              		<button type="button" class="btn btn-primary">Search</button>
+					            	</div>
+				            	</div>
+				        	</form>
+						</div>
+						</div>
+						<div class="addEmployeelabel">
+							<table class="table table-consider">
+									
+								<tr>
+								    <th>Employee Id</th>
+									<th>Employee Name</th>
+									<th>Business Unit</th>
+									<th>Resource Type</th>
+									<th>View</th>
+									<th>Delete</th>
+								</tr>
+								<tr ng-repeat = "employee in empList | filter:empnameSearch.employeeName">
+									<td>{{employee.employeeId}}</td>
+									<td>{{employee.employeeName}}</td>
+									<td>{{employee.businessUnit.nameOfBusinessUnit}}</td>
+									 <td>{{employee.resourceType.resourceType}}</td> 
+									<!-- <td>{{employee.team.nameOfTheTeam}}</td> -->
+									
+									<td><a ui-sref="employeeView({eId:employee.id})"><img src="images/Edit.png"></a></td>
+									<td><a ng-click="empdelete(employee.id)"><img src="images/Trash.png"></a></td>
+									
+									</tr>
+									
+								</table>
+								<div>
+									<a ui-sref="employeepage"><button type="button" class="btn btn-primary pull-right ">Add</button></a>
+								</div>
+								 <div align="center"  colspan="6">
+									<div class="text-center">
+										<pagination total-items="totalCount" ng-change="pageChanged()"
+											items-per-page="pageSizeSelected" direction-links="true"
+											ng-model="pageIndex" max-size="maxSize" class="pagination pag_change"
+											boundary-links="true" rotate="false" num-pages="numPages">
+										</pagination>
+										
+									</div>
+								</div> 
+							</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		

@@ -1,0 +1,69 @@
+<div class="wrapper">
+	<top-dir></top-dir>
+	<side-dir></side-dir>
+	<div class="content">
+		<div class="container">
+			<div class="btn_mar_top ">
+				<div class="row">
+					<h3 class="pull-left head_change">Customer Address</h3>
+					<div class="col-md-offset-2 col-md-8">
+						<form class="form-inline">
+							<div class="input-group">
+								<input type="text" ng-model="search" class="form-control" size="50" placeholder="Search" required>
+								<div class="input-group-btn">
+									<button type="button" class="btn btn-primary">Search</button>
+								</div>
+							</div>
+						</form>
+					</div>
+				</div>
+				<div class="addEmployeelabel">
+					<table class="table table-consider ">
+	
+						<tr>
+							<th>Customer Name</th>
+							<th>Address Type</th>
+							<th>Address 1</th>
+							<th>Address 2</th>
+							<th>Address 3</th>
+							<th>City</th>
+							<th>State</th>
+							<th>Country</th>
+							<th>Pincode</th>
+							<th>Edit</th>
+							<th>Delete</th>
+						</tr>
+	
+						<tr ng-repeat="cusAddr in addressList">
+							<td>{{cusAddr.customer.customerName}}</td>
+							<td>{{cusAddr.customerAddressType.addressType}}</td>
+							<td>{{cusAddr.address1}}</td>
+							<td>{{cusAddr.address2}}</td>
+							<td>{{cusAddr.address3}}</td>
+							<td>{{cusAddr.city}}</td>
+							<td>{{cusAddr.state}}</td>
+							<td>{{cusAddr.country}}</td>
+							<td>{{cusAddr.pincode}}</td>
+							<td><a ui-sref="customerAddressEdit({addressId:cusAddr.id})"><img src="images/Edit.png"></a></td>
+							<td><a ng-click="cusBilDelete(cusAddr.id)"><img src="images/Trash.png"></a></td>
+						</tr>
+							 
+					</table>
+					<div>
+						<a ui-sref="customerAddressAdd"><button type="button" class="btn btn-primary pull-right ">Add</button></a>
+					</div>
+					<div align="center"  colspan="6">
+						<div class="text-center">
+							<pagination total-items="totalCount" ng-change="pageChanged()"
+														items-per-page="pageSizeSelected" direction-links="true"
+														ng-model="pageIndex" max-size="maxSize" class="pagination pag_change"
+														boundary-links="true" rotate="false" num-pages="numPages">
+							</pagination>
+													
+						</div>
+					</div>
+				</div> 
+			</div>
+		</div>
+	</div>
+</div>

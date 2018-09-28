@@ -1,0 +1,214 @@
+<!-- 
+	<div class="wrapper">
+	<top-dir></top-dir>
+		<side-dir></side-dir>
+		<div class="content">
+			<div class="btn_mar_top ">	
+			
+			<div class="container">
+		<div id="form-container">
+  
+	      <div class="page-header text-center " >
+	          <h2>Employee</h2>
+	       
+	          <div id="status-buttons" class="text-center " >
+	             <a ui-sref-active="active" ui-sref="basicinfo" ><span>1</span>  Basic info</a>
+	              <a ui-sref-active="active" ui-sref="addinfo"><span>2</span> Add Info</a>
+	               <a ui-sref-active="active" ui-sref="jobinfo"><span>3</span>Job Info</a>
+	                 <a ui-sref-active="active" ui-sref="kye"><span>4</span>Emp KYE</a>
+	                 <a ui-sref-active="active" ui-sref="prevexp"><span>5</span>Prev Exp</a>
+	                 <a ui-sref-active="active" ui-sref="qualification"><span>6</span>Qualification</a>
+	                 <a ui-sref-active="active" ui-sref="salary"><span>7</span>Emp Salary</a>
+	                  <a ui-sref-active="active" ui-sref="insurance" onclick="move()"><span>8</span>Insurance</a>
+	      
+	          </div>
+	      </div>
+	      
+			
+			
+			
+	      
+	     <h3 style= "margin-left:40px;">Salary</h3>
+	          
+	                <form class="form-horizontal addEmployeelabel" name="ae">
+  	
+							  	   <div class="row">
+								
+								<div class="form-group col-md-6">
+								    <label class="control-label col-md-4" for="employee">Fixed CTC:<span style="color:Red"> * </span></label>
+								    <div class="col-md-6">
+								      <input type="date" class="form-control" ng-model="employee.dateOfBirth"  name="dateb" required/>
+								       <span style="color:Red"  ng-show="ae.dateb.$error.required && ae.dateb.$touched">select date of joining</span>
+								    </div>
+								</div>
+									<div class="form-group col-md-6">
+								    <label class="control-label col-md-4" for="employee"> Benifits:<span style="color:Red"> * </span></label>
+								    <div class="col-md-6">
+								      <input type="date" class="form-control" ng-model="employee.dateOfJoining"  name="datej"   required/>
+								        <span style="color:Red"  ng-show="ae.datej.$error.required && ae.datej.$touched">select date of joining</span>
+								    </div>
+								</div>
+								</div>	
+									<div class="row">
+							
+								<div class="form-group col-md-6">
+								  	<label for="employee" class="control-label col-md-4">CTC:<span style="color:Red"> * </span></label>
+								  	<div class="col-md-6">
+										 <select class="form-control" ng-model="employee.resourceType.id" ng-options="detail.id as detail.resourceType for detail in resourceList" ng-change="getList(employee.resourceType.id)" name="resource" required>
+										<option value="">Select an option</option>
+										</select> 
+										<span style="color:Red"  ng-show="ae.resource.$error.required && ae.resource.$touched">resource is Required!</span>
+									</div>
+								</div>
+								<div class="form-group col-md-6 ">
+								<label for="businessU" class="control-label col-md-4"> Var-CTC:<span style="color:Red"> * </span> </label>
+								
+								
+								<div class="col-md-6">
+								
+								<select class='form-control' ng-model="id" name="costcenter" ng-options="list.id as list.nameOfTheCostCenter for list in costlist" ng-change="costCenterList(id)" required>
+								<option value="">Select an option</option>
+							  	</select>
+							  	  <span  style="color:Red"  ng-if="bu.costcenter.$error.required && bu.costcenter.$touched">cost center name is required </span>
+							  	</div>
+							   </div>
+								</div>	
+								<div class="row">
+								<div class="form-group col-md-6">
+								    <label class="control-label col-md-4" for="employee">TCTC:<span style="color:Red"> * </span></label>
+								    <div class="col-md-6">
+								     <select class='form-control' ng-model="employee.businessUnit.id"  ng-options="detail1.id as detail1.nameOfBusinessUnit for detail1 in budetails" ng-change="subbusunit(employee.businessUnit.id)" name="busin" required>
+								    	<option value="">Select an option</option>
+							  			</select>
+							  			
+						                    <span style="color:Red"  ng-show="ae.busin.$error.required && ae.busin.$touched">Business Unit is Required!</span>
+						               
+								    </div>
+								</div>
+								<div class="form-group col-md-6">
+								    <label class="control-label col-md-4" for="employee">Basic :<span style="color:Red"> * </span></label>
+								    <div class="col-md-6">
+								      <select class='form-control' ng-model="employee.subBusinessUnit.id"  ng-options="detail.id as detail.subBusinessUnitName for detail in list" ng-change="teamBusunit(employee.subBusinessUnit.id)" name="subusin" required>
+							  			<option value="">Select an option</option>
+							  			</select>
+							  			 <span style="color:Red"  ng-show="ae.subusin.$error.required && ae.subusin.$touched">Subbusiness Unit is Required!</span>
+								    </div>
+								</div>
+							
+								</div>
+									<div class="row">
+								<div class="form-group col-md-6">
+								  	<label for="employee" class="control-label col-md-4">HRA:<span style="color:Red"> * </span></label>
+								  	<div class="col-md-6">
+										<select class='form-control' ng-model="employee.designation.id"   ng-options="detail.id as detail.designation for detail in deslis" name="desig" required >
+										<option value="">Select an option</option>
+										</select>
+										<span style="color:Red"  ng-show="ae.desig.$error.required && ae.desig.$touched">designation is Required!</span>
+									</div>
+								</div>
+								<div class="form-group col-md-6">
+								    <label class="control-label col-md-4" for="employee">PF:<span style="color:Red"> * </span></label>
+								    <div class="col-md-6"> 
+								       <select class="form-control" ng-model="employee.bondType.id" ng-options="detail.id as detail.bondType for detail in getBondlist" ng-change="getBondType(employee.bondType.id)" name="bond" required>
+										<option value="">Select an option</option>
+										</select> 
+										<span style="color:Red"  ng-show="ae.bond.$error.required && ae.bond.$touched">bond is Required!</span>
+								    </div>
+							  	</div>
+								</div>
+									   <div class="row">
+								
+								<div class="form-group col-md-6">
+								    <label class="control-label col-md-4" for="employee">Ojas-PF:<span style="color:Red"> * </span></label>
+								    <div class="col-md-6">
+								      <input type="date" class="form-control" ng-model="employee.dateOfBirth"  name="dateb" required/>
+								       <span style="color:Red"  ng-show="ae.dateb.$error.required && ae.dateb.$touched">select date of Resigning</span>
+								    </div>
+								</div>
+									<div class="form-group col-md-6">
+								    <label class="control-label col-md-4" for="employee">Ojas-FC:<span style="color:Red"> * </span></label>
+								    <div class="col-md-6">
+								      <input type="date" class="form-control" ng-model="employee.dateOfJoining"  name="datej"   required/>
+								        <span style="color:Red"  ng-show="ae.datej.$error.required && ae.datej.$touched">select date of Exit</span>
+								    </div>
+								</div>
+								</div>
+									   <div class="row">
+								
+							    <div class="form-group col-md-6">
+									    <label class="control-label col-md-4" for="employee">Food-Coupons:<span style="color:Red"> * </span></label>
+									    <div class="col-md-6"> 
+									      <input type="text" class="form-control" ng-model="employee.currentAddress.city" id="address"  name="cityc" ng-pattern="/^[a-zA-Z\s]*$/" ng-required="true"  placeholder="seperation type" />
+									      <span style="color:Red"  ng-if="ae.cityc.$error.required && ae.cityc.$dirty">  required</span>
+                                         <span style="color:Red" ng-show="ae.cityc.$error.pattern">Please Enter seperation Type</span>
+									    </div>
+							  	      </div>
+							  	     <div class="form-group col-md-6">
+									    <label class="control-label col-md-4" for="employee">Special-Allowance:<span style="color:Red"> * </span></label>
+									    <div class="col-md-6"> 
+									      <input type="text" class="form-control" ng-model="employee.currentAddress.city" id="address"  name="cityc" ng-pattern="/^[a-zA-Z\s]*$/" ng-required="true"  placeholder="Enter Plan-Id" />
+									      <span style="color:Red"  ng-if="ae.cityc.$error.required && ae.cityc.$dirty">  required</span>
+                                         <span style="color:Red" ng-show="ae.cityc.$error.pattern">Please Enter seperation Type</span>
+									    </div>
+							  	      </div>
+								</div>
+								   <div class="row">
+								
+							    <div class="form-group col-md-6">
+									    <label class="control-label col-md-4" for="employee">Plan-Id:<span style="color:Red"> * </span></label>
+									    <div class="col-md-6"> 
+									      <input type="text" class="form-control" ng-model="employee.currentAddress.city" id="address"  name="cityc" ng-pattern="/^[a-zA-Z\s]*$/" ng-required="true"  placeholder="Enter Plan-Id" />
+									      <span style="color:Red"  ng-if="ae.cityc.$error.required && ae.cityc.$dirty">  required</span>
+                                         <span style="color:Red" ng-show="ae.cityc.$error.pattern">Please Enter seperation Type</span>
+									    </div>
+							  	      </div>
+							  	   <div class="form-group col-md-6">
+									    <label class="control-label col-md-4" for="employee">Project-Allowance:<span style="color:Red"> * </span></label>
+									    <div class="col-md-6"> 
+									      <input type="text" class="form-control" ng-model="employee.currentAddress.city" id="address"  name="cityc" ng-pattern="/^[a-zA-Z\s]*$/" ng-required="true"  placeholder="Enter Project-Allowance" />
+									      <span style="color:Red"  ng-if="ae.cityc.$error.required && ae.cityc.$dirty">  required</span>
+                                         <span style="color:Red" ng-show="ae.cityc.$error.pattern">Please Enter seperation Type</span>
+									    </div>
+							  	      </div>
+								</div>
+								   <div class="row">
+								
+							    <div class="form-group col-md-6">
+									    <label class="control-label col-md-4" for="employee">Loc-Allowance:<span style="color:Red"> * </span></label>
+									    <div class="col-md-6"> 
+									      <input type="text" class="form-control" ng-model="employee.currentAddress.city" id="address"  name="cityc" ng-pattern="/^[a-zA-Z\s]*$/" ng-required="true"  placeholder="Enter Loc-Allowance" />
+									      <span style="color:Red"  ng-if="ae.cityc.$error.required && ae.cityc.$dirty">  required</span>
+                                         <span style="color:Red" ng-show="ae.cityc.$error.pattern">Please Enter Separation Type</span>
+									    </div>
+							  	      </div>
+							  	     <div class="form-group col-md-6">
+									    <label class="control-label col-md-4" for="employee">Check:<span style="color:Red"> * </span></label>
+									    <div class="col-md-6"> 
+									      <input type="text" class="form-control" ng-model="employee.currentAddress.city" id="address"  name="cityc" ng-pattern="/^[a-zA-Z\s]*$/" ng-required="true"  placeholder="Enter Check" />
+									      <span style="color:Red"  ng-if="ae.cityc.$error.required && ae.cityc.$dirty">  required</span>
+                                         <span style="color:Red" ng-show="ae.cityc.$error.pattern">Please Enter Separation Type</span>
+									    </div>
+							  	      </div>
+								</div>
+								<div class="clearfix"></div>
+								
+								
+	<div class="form-group">
+		<div class=" col-md-11">
+			<button type="button" class="btn btn-primary pull-right" ui-sref="insurance">Next Section</button>
+			<button type="button" class="btn btn-primary " ui-sref="qualification">Back</button>
+		</div>
+	</div>
+</form>
+
+	  </div>
+	  	
+	</div>
+	
+    
+    </div>
+</div>
+	
+    </div>
+    	
+		 -->

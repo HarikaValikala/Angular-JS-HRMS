@@ -1,0 +1,45 @@
+<div class="wrapper">
+	<top-dir></top-dir>
+		<side-dir></side-dir>
+		<div class="content">
+				<div class="container">
+					<div class="col-md-offset-2 col-md-8">
+						<div class="Emp_mar_top addEmployeelabel">
+							<div class="form-horizontal">
+								<h3 class="head_change">Designation</h3>
+								<!-- <div class="form-group">
+									<label for="designation" class="control-label col-md-3"> Business Unit : </label>
+									<div class="col-md-9">
+										<select class="form-control" ng-model="desigGet.subBusinessUnitId.bussinessUnitId.nameOfBusinessUnit.id" ng-options="detail1.id as detail1.nameOfBusinessUnit for detail1 in budetails" ng-change="subbusunit(desigGet.subBusinessUnitId.bussinessUnitId.nameOfBusinessUnit.id)">
+										</select>
+									</div>
+								</div> -->
+								<div class="form-group">
+									<label for="designation" class="control-label col-md-3"> Sub Business Unit : </label>
+									<div class="col-md-9">
+										<select class="form-control" ng-model="desigGet.subBusinessUnitId.id" ng-options="detail.id as detail.subBusinessUnitName for detail in sbudetails" ng-change="sbuGet(desigGet.subBusinessUnitId.id)">
+										</select>
+									</div>
+								</div>
+								<div class="form-group">
+									<label for="designation" class="control-label col-md-3">Designation : </label>
+									<div class="col-md-9">
+										<input type="text" class="form-control" ng-model="desigGet.designation">
+									</div>
+								</div>
+							</div>
+							
+							<div class="row">
+								
+									<button type="button" ui-sref="designationTable" class="btn btn-primary btn_mar_top">Back</button>
+									<button type="button" ng-click="desigGetById()" class="btn btn-primary pull-right btn_mar_top">Reset</button>
+									<button type="button" class="btn btn-primary pull-right btn_mar_top" ng-click="desigEdit()">Update</button>
+									<button type="button" class="btn btn-primary pull-right btn_mar_top"  ng-click="desigGetById()">Reset</button>
+									
+								
+							</div>
+						</div>
+					</div>
+				</div>
+		</div>
+</div>

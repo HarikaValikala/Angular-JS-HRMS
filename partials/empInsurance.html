@@ -1,0 +1,239 @@
+<!-- 	<div class="wrapper">
+	<top-dir></top-dir>
+		<side-dir></side-dir>
+		<div class="content">
+			<div class="btn_mar_top ">	
+			
+			<div class="container">
+		<div id="form-container">
+  
+	      <div class="page-header text-center">
+	          <h2>Employee</h2>
+	          
+	          <div id="status-buttons" class="text-center ">
+	              <a ui-sref-active="active" ui-sref="basicinfo"><span>1</span> Basic info</a>
+	              <a ui-sref-active="active" ui-sref="addinfo"><span>2</span> Add info</a>
+	               <a ui-sref-active="active" ui-sref="jobinfo"><span>3</span>Job Info</a>
+	               <a ui-sref-active="active" ui-sref="kye"><span>4</span>KYE</a>
+	               <a ui-sref-active="active" ui-sref="prevexp"><span>5</span>Prev Exp</a>
+	               <a ui-sref-active="active" ui-sref="qualification"><span>6</span>Qualification</a>
+	                <a ui-sref-active="active" ui-sref="salary"><span>7</span>Salary</a>
+	                <a ui-sref-active="active" ui-sref="insurance"><span>8</span>Insurance</a>
+          </div>
+       
+	      </div>
+	      
+	     <h3 style= "margin-left:40px;">Insurance</h3>
+	   
+	          <form class="form-horizontal addEmployeelabel " name="ae">
+                                  <div class="row">
+							  	       <div class="form-group col-md-6">
+									    <label class="control-label col-md-4" for="employee">Emp Age:<span style="color:Red"> * </span></label>
+									    <div class="col-md-6"> 
+									      <input type="text" class="form-control" ng-model="employee.kyc.passport.nameInPassport" id="passport" name="passportn"  placeholder="Enter Employee Age" required>
+									      <span style="color:Red"  ng-if="ae.passportn.$error.required && ae.passportn.$dirty">required</span>
+									    </div>
+							  	      </div>
+									<div class="form-group col-md-6">
+									    <label class="control-label col-md-4" for="employee">Age_Band:<span style="color:Red"> * </span></label>
+									    <div class="col-md-6"> 
+									      <input type="text" class="form-control" ng-model="employee.kyc.passport.nameInPassport" id="passport" name="passportn"  placeholder="Enter Age_Band" required>
+									      <span style="color:Red"  ng-if="ae.passportn.$error.required && ae.passportn.$dirty">required</span>
+									    </div>
+							  	      </div>
+							  	  </div>
+							  	           <div class="row">
+									<div class="form-group col-md-6">
+									    <label class="control-label col-md-4" for="employee">Inc_Upg:<span style="color:Red"> * </span></label>
+									    <div class="col-md-6"> 
+									      <input type="text" class="form-control" ng-model="employee.kyc.passport.nameInPassport" id="passport" name="passportn"  placeholder="Enter Inc_Upg" required>
+									      <span style="color:Red"  ng-if="ae.passportn.$error.required && ae.passportn.$dirty">required</span>
+									    </div>
+							  	      </div>
+								    <div class="form-group col-md-6">
+									    <label class="control-label col-md-4" for="employee">Ins_Plan: :<span style="color:Red"> * </span></label>
+									    <div class="col-md-6"> 
+									      <input type="text" class="form-control" ng-model="employee.kyc.passport.nameInPassport" id="passport" name="passportn"  placeholder="Enter Employee Insurance Plan" required>
+									      <span style="color:Red"  ng-if="ae.passportn.$error.required && ae.passportn.$dirty">required</span>
+									    </div>
+							  	      </div>
+							  	     
+							  	      </div>
+							  	              <div class="row">
+									<div class="form-group col-md-6">
+									    <label class="control-label col-md-4" for="employee">Cover Days:<span style="color:Red"> * </span></label>
+									    <div class="col-md-6"> 
+									      <input type="text" class="form-control" ng-model="employee.kyc.passport.nameInPassport" id="passport" name="passportn"  placeholder="Enter Cover Days" required>
+									      <span style="color:Red"  ng-if="ae.passportn.$error.required && ae.passportn.$dirty">required</span>
+									    </div>
+							  	      </div>
+							  	     
+								    <div class="form-group col-md-6">
+									    <label class="control-label col-md-4" for="employee">Emp_Prem: <span style="color:Red"> * </span></label>
+									    <div class="col-md-6"> 
+									      <input type="text" class="form-control" ng-model="employee.kyc.passport.nameInPassport" id="passport" name="passportn"  placeholder="Enter Employee Prem" required>
+									      <span style="color:Red"  ng-if="ae.passportn.$error.required && ae.passportn.$dirty">required</span>
+									    </div>
+							  	      </div>
+							  	     
+							  	      </div>
+							  	            <div class="row">
+									<div class="form-group col-md-6">
+									    <label class="control-label col-md-4" for="employee">Spouse Age: <span style="color:Red"> * </span></label>
+									    <div class="col-md-6"> 
+									      <input type="text" class="form-control" ng-model="employee.kyc.passport.nameInPassport" id="passport" name="passportn"  placeholder="Enter Spouse Age" required>
+									      <span style="color:Red"  ng-if="ae.passportn.$error.required && ae.passportn.$dirty">required</span>
+									    </div>
+							  	      </div>
+								    <div class="form-group col-md-6">
+									    <label class="control-label col-md-4" for="employee">Sp_AgeBand: :<span style="color:Red"> * </span></label>
+									    <div class="col-md-6"> 
+									      <input type="text" class="form-control" ng-model="employee.kyc.passport.nameInPassport" id="passport" name="passportn"  placeholder="Enter Spouse AgeBand" required>
+									      <span style="color:Red"  ng-if="ae.passportn.$error.required && ae.passportn.$dirty">required</span>
+									    </div>
+							  	      </div>
+							  	     
+							  	      </div>
+							  	      <div class="row">
+									    <div class="form-group col-md-6">
+									    <label class="control-label col-md-4" for="employee">Sp_Prem :<span style="color:Red"> * </span></label>
+									    <div class="col-md-6"> 
+									      <input type="text" class="form-control" ng-model="employee.kyc.passport.nameInPassport" id="passport" name="passportn"  placeholder="Enter Spouse Prem" required>
+									      <span style="color:Red"  ng-if="ae.passportn.$error.required && ae.passportn.$dirty">required</span>
+									    </div>
+							  	      </div>
+								    <div class="form-group col-md-6">
+									    <label class="control-label col-md-4" for="employee">Child-1 Age:<span style="color:Red"> * </span></label>
+									    <div class="col-md-6"> 
+									      <input type="text" class="form-control" ng-model="employee.kyc.passport.nameInPassport" id="passport" name="passportn"  placeholder="Enter Child-1 Age" required>
+									      <span style="color:Red"  ng-if="ae.passportn.$error.required && ae.passportn.$dirty">required</span>
+									    </div>
+							  	      </div>
+							  	     
+							  	      </div>
+							  	        <div class="row">
+							  	       <div class="form-group col-md-6">
+									    <label class="control-label col-md-4" for="employee">Child-1 AgeBand: <span style="color:Red"> * </span></label>
+									    <div class="col-md-6"> 
+									      <input type="text" class="form-control" ng-model="employee.kyc.passport.nameInPassport" id="passport" name="passportn"  placeholder="Enter Child-1 AgeBand" required>
+									      <span style="color:Red"  ng-if="ae.passportn.$error.required && ae.passportn.$dirty">required</span>
+									    </div>
+							  	      </div>
+									<div class="form-group col-md-6">
+									    <label class="control-label col-md-4" for="employee">Child-1 Prem: <span style="color:Red"> * </span></label>
+									    <div class="col-md-6"> 
+									      <input type="text" class="form-control" ng-model="employee.kyc.passport.nameInPassport" id="passport" name="passportn"  placeholder="Enter Child-1 Prem" required>
+									      <span style="color:Red"  ng-if="ae.passportn.$error.required && ae.passportn.$dirty">required</span>
+									    </div>
+							  	      </div>
+							  	     
+							  	      </div>
+							  	           <div class="row">
+										<div class="form-group col-md-6">
+									    <label class="control-label col-md-4" for="employee">Child-2 Age: <span style="color:Red"> * </span></label>
+									    <div class="col-md-6"> 
+									      <input type="text" class="form-control" ng-model="employee.kyc.passport.nameInPassport" id="passport" name="passportn"  placeholder="Enter Child-2 Age" required>
+									      <span style="color:Red"  ng-if="ae.passportn.$error.required && ae.passportn.$dirty">required</span>
+									    </div>
+							  	      </div>
+								    <div class="form-group col-md-6">
+									    <label class="control-label col-md-4" for="employee">Child-2 AgeBand:<span style="color:Red"> * </span></label>
+									    <div class="col-md-6"> 
+									      <input type="text" class="form-control" ng-model="employee.kyc.passport.nameInPassport" id="passport" name="passportn"  placeholder="Enter Child-2 AgeBand" required>
+									      <span style="color:Red"  ng-if="ae.passportn.$error.required && ae.passportn.$dirty">required</span>
+									    </div>
+							  	      </div>
+							  	     
+							  	      </div>
+							  	              <div class="row">
+									  <div class="form-group col-md-6">
+									    <label class="control-label col-md-4" for="employee">Child-2 Prem:<span style="color:Red"> * </span></label>
+									    <div class="col-md-6"> 
+									      <input type="text" class="form-control" ng-model="employee.kyc.passport.nameInPassport" id="passport" name="passportn"  placeholder="Enter Child-2 Prem" required>
+									      <span style="color:Red"  ng-if="ae.passportn.$error.required && ae.passportn.$dirty">required</span>
+									    </div>
+							  	      </div>
+								    <div class="form-group col-md-6">
+									    <label class="control-label col-md-4" for="employee">Child-3 Age:<span style="color:Red"> * </span></label>
+									    <div class="col-md-6"> 
+									      <input type="text" class="form-control" ng-model="employee.kyc.passport.nameInPassport" id="passport" name="passportn"  placeholder="Enter Child-3 Age" required>
+									      <span style="color:Red"  ng-if="ae.passportn.$error.required && ae.passportn.$dirty">required</span>
+									    </div>
+							  	      </div>
+							  	     
+							  	      </div>
+							  	             <div class="row">
+									<div class="form-group col-md-6">
+									    <label class="control-label col-md-4" for="employee">Child-3 AgeBand:<span style="color:Red"> * </span></label>
+									    <div class="col-md-6"> 
+									      <input type="text" class="form-control" ng-model="employee.kyc.passport.nameInPassport" id="passport" name="passportn"  placeholder="Enter Child-3 AgeBand" required>
+									      <span style="color:Red"  ng-if="ae.passportn.$error.required && ae.passportn.$dirty">required</span>
+									    </div>
+							  	      </div>
+								    <div class="form-group col-md-6">
+									    <label class="control-label col-md-4" for="employee">Child-3 Prem:<span style="color:Red"> * </span></label>
+									    <div class="col-md-6"> 
+									      <input type="text" class="form-control" ng-model="employee.kyc.passport.nameInPassport" id="passport" name="passportn"  placeholder="Enter Child-3 Prem" required>
+									      <span style="color:Red"  ng-if="ae.passportn.$error.required && ae.passportn.$dirty">required</span>
+									    </div>
+							  	      </div>
+							  	     
+							  	      </div>
+							  	             <div class="row">
+									 <div class="form-group col-md-6">
+									    <label class="control-label col-md-4" for="employee">Total_GMC_Prem:<span style="color:Red"> * </span></label>
+									    <div class="col-md-6"> 
+									      <input type="text" class="form-control" ng-model="employee.kyc.passport.nameInPassport" id="passport" name="passportn"  placeholder="Enter Total_GMC_Prem" required>
+									      <span style="color:Red"  ng-if="ae.passportn.$error.required && ae.passportn.$dirty">required</span>
+									    </div>
+							  	      </div>
+								    <div class="form-group col-md-6">
+									    <label class="control-label col-md-4" for="employee">GPA-Plan:<span style="color:Red"> * </span></label>
+									    <div class="col-md-6"> 
+									      <input type="text" class="form-control" ng-model="employee.kyc.passport.nameInPassport" id="passport" name="passportn"  placeholder="Enter GPA-Plan" required>
+									      <span style="color:Red"  ng-if="ae.passportn.$error.required && ae.passportn.$dirty">required</span>
+									    </div>
+							  	      </div>
+							  	     
+							  	      </div>
+							  	                 <div class="row">
+									<div class="form-group col-md-6">
+									    <label class="control-label col-md-4" for="employee">GPA-Prem:<span style="color:Red"> * </span></label>
+									    <div class="col-md-6"> 
+									      <input type="text" class="form-control" ng-model="employee.kyc.passport.nameInPassport" id="passport" name="passportn"  placeholder="Enter GPA-Prem" required>
+									      <span style="color:Red"  ng-if="ae.passportn.$error.required && ae.passportn.$dirty">required</span>
+									    </div>
+							  	      </div>
+								    <div class="form-group col-md-6">
+									    <label class="control-label col-md-4" for="employee">Total Prem:<span style="color:Red"> * </span></label>
+									    <div class="col-md-6"> 
+									      <input type="text" class="form-control" ng-model="employee.kyc.passport.nameInPassport" id="passport" name="passportn"  placeholder="Enter Total Prem" required>
+									      <span style="color:Red"  ng-if="ae.passportn.$error.required && ae.passportn.$dirty">required</span>
+									    </div>
+							  	      </div>
+							  	     
+							  	      </div>
+								
+								
+							
+									
+	<div class="form-group">
+		<div class="col-md-11">
+			<button type="button" class="btn btn-primary pull-right" ui-sref="salary">Next Section</button>
+			<button type="button" class="btn btn-primary " ui-sref="salary">Back</button>
+		</div>
+	</div>
+</form>
+	   	
+	  
+	  </div>
+	  	
+	</div>
+	
+    
+    </div>
+</div>
+	
+    </div>
+    	
+		 -->

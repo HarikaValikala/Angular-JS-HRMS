@@ -1,0 +1,110 @@
+<div class="wrapper">
+	<top-dir></top-dir>
+		<side-dir></side-dir>
+		<div class="content">
+				<div class="container">
+					<div class="col-md-offset-2 col-md-8">
+						<div class="Emp_mar_top addEmployeelabel">
+							<h3 class="head_change">Customer Contact</h3>
+							<div class="btn_mar_top">
+							<form name="CustomerContact">
+								<div  class="form-group row">
+									<label for="CustomerContact" class="control-label col-md-3"> Customer Name: <span style="color:Red">*</span></label>
+									<div class="col-md-9">
+										<select class='form-control' ng-model="postCus.cuslistID" name="customername" ng-options="list.id as list.customerName for list in cuscondetails" ng-change="customernameList(postCus.cuslistID.id)" required>
+											<option value="">Choose an option</option>
+							  			</select>
+									</div>
+								</div>
+								<div  class="form-group row">
+									<label for="CustomerContact" class="control-label col-md-3"> Contact Type : <span style="color:Red">*</span></label>
+									<div class="col-md-9">
+										<select class='form-control' ng-model="postCus.custypeId" name="contacttype" ng-options="list.id as list.contactType for list in custypedetails" ng-change="cuscontacttype(postCus.custypeId.id)" required>
+											<option value="">Choose an option</option>
+							  			</select>
+									</div>
+								</div>
+								<div  class="form-group row">
+									<label for="CustomerContact" class="control-label col-md-3"> Contact Name: <span style="color:Red">*</span></label>
+									<div class="col-md-9">
+										<input type="text" class="form-control" ng-model="postCus.contactPersonName" name="contactname" placeholder="Enter customer name" required/>
+										 <div class="has-error" ng-show="CustomerContact.contactname.$dirty" >
+					                    	<span style="color:Red" class="error" ng-show="CustomerContact.contactname.$error.required"> contact name is Required !</span>
+					                  	</div>
+									</div>
+								</div>
+								<div  class="form-group row">
+									<label for="CustomerContact" class="control-label col-md-3"> Contact E-mail ID :  <span style="color:Red">*</span></label>
+									<div class="col-md-9">
+										<input type="text" class="form-control" ng-model="postCus.emailId" name="contactemailid" required/>
+										<div class="has-error" ng-show="CustomerContact.contactemailid.$dirty" >
+					                    	<span style="color:Red" class="error" ng-show="CustomerContact.contactemailid.$error.required"> contact mail Id is Required !</span>
+					                  	</div>
+									</div>
+								</div>
+								<div  class="form-group row">
+									<label for="CustomerContact" class="control-label col-md-3"> Contact Mobile Number :  <span style="color:Red">*</span></label>
+									<div class="col-md-9">
+										<input type="text" class="form-control" ng-model="postCus.mobileNumber" name="conmobilenbr" required/>
+										<div class="has-error" ng-show="CustomerContact.conmobilenbr.$dirty" >
+					                    	<span style="color:Red" class="error" ng-show="CustomerContact.conmobilenbr.$error.required"> contact number is Required !</span>
+					                  	</div>
+									</div>
+								</div>
+								<div  class="form-group row">
+									<label for="CustomerContact" class="control-label col-md-3"> Date Of Birth :  <span style="color:Red">*</span></label>
+									<div class="col-md-9">
+										<input type="date" class="form-control" ng-model="postCus.dateOfBirth" name="condob" required/>
+										<div class="has-error" ng-show="CustomerContact.condob.$dirty" >
+					                    	<span style="color:Red" class="error" ng-show="CustomerContact.condob.$error.required"> Date of Birth is Required !</span>
+					                  	</div>
+									</div>
+								</div>
+								<div  class="form-group row">
+									<label for="CustomerContact" class="control-label col-md-3"> Marital Status :  <span style="color:Red">*</span></label>
+									<div class="col-md-9">
+										<input type="text" class="form-control" ng-model="postCus.marritalStatus" name="MaritalStatus" required/>
+										<div class="has-error" ng-show="CustomerContact.MaritalStatus.$dirty" >
+					                    	<span style="color:Red" class="error" ng-show="CustomerContact.MaritalStatus.$error.required"> Marital Status is Required !</span>
+					                  	</div>
+									</div>
+								</div>
+								<div  class="form-group row">
+									<label for="CustomerContact" class="control-label col-md-3"> Anniversary Date :  <span style="color:Red">*</span></label>
+									<div class="col-md-9">
+										<input type="date" class="form-control" ng-model="postCus.anniversaryDate" name="anniversarydate" required/>
+										<div class="has-error" ng-show="CustomerContact.anniversarydate.$dirty" >
+					                    	<span style="color:Red" class="error" ng-show="CustomerContact.anniversarydate.$error.required"> Anniversary Date is Required !</span>
+					                  	</div>
+									</div>
+								</div>
+								<div  class="form-group row">
+									<label for="CustomerContact" class="control-label col-md-3"> Personal Address :  <span style="color:Red">*</span></label>
+									<div class="col-md-9">
+										<input type="text" class="form-control" ng-model="postCus.personalAddress" name="personalAdrs" required/>
+										<div class="has-error" ng-show="CustomerContact.personalAdrs.$dirty" >
+					                    	<span style="color:Red" class="error" ng-show="CustomerContact.personalAdrs.$error.required"> Personal Address is Required !</span>
+					                  	</div>
+									</div>
+								</div>
+								<div  class="form-group row">
+									<label for="CustomerContact" class="control-label col-md-3"> Official Address :  <span style="color:Red">*</span></label>
+									<div class="col-md-9">
+										<input type="text" class="form-control" ng-model="postCus.officeAddress" name="OfficialAdrs" required/>
+										<div class="has-error" ng-show="CustomerContact.OfficialAdrs.$dirty" >
+					                    	<span style="color:Red" class="error" ng-show="CustomerContact.OfficialAdrs.$error.required"> Official Address is Required !</span>
+					                  	</div>
+									</div>
+								</div>
+								</form>
+								</div>
+								<div class="col-md-12">
+									<button type="button" ui-sref="customerContactTable" class="btn btn-primary btn_mar_top">Back</button>	
+									<button type="button" class="btn btn-primary pull-right btn_mar_top" ng-click="cusPost()" >Save</button>
+								</div>
+								
+						</div>
+					</div>
+				</div>
+			</div>
+	</div>

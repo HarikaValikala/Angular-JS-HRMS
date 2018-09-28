@@ -1,0 +1,55 @@
+<div class="wrapper">
+	<top-dir></top-dir>
+		<side-dir></side-dir>
+		<div class="content">
+				<div class="container">
+					<div class=" Emp_mar_top "></div>
+					<div class="row">
+						<h3 class="pull-left" style="color:#192766;margin-top: 0px;">Team</h3>
+							<div class="col-md-offset-3 col-md-6">
+								<form class="form-inline">
+				                    <div class="input-group">
+				                    <input type="text" ng-model="search" class="form-control" size="50" placeholder="Search requirement" ng-change="searchTeam(search)"  required>
+				                    <div class="input-group-btn">
+				                    <button type="button" class="btn btn-primary">Search</button>
+				                    </div>
+				                    </div>
+				                </form>
+							</div>
+						</div>
+						<div class="addEmployeelabel">
+						<table class="table table-considered ">
+								
+								<tr>
+									<th>Business Unit</th>
+									<th>Sub Business Unit</th>
+									<th>Team</th>
+									<th>Edit</th>
+									<th>Delete</th>
+								</tr>
+								<tr ng-repeat = "tL in teamlist | filter:teamsearchlist.nameOfTheTeam">
+									<td>{{tL.subBusinessUnit.bussinessUnitId.nameOfBusinessUnit}}</td>
+									<td>{{tL.subBusinessUnit.subBusinessUnitName}}</td>
+									<td>{{tL.nameOfTheTeam}}</td>
+									<td><a ui-sref="teamEdit({tid:tL.id})"><img src="images/Edit.png"></a></td>
+									<td><a ng-click="teamdelete(tL.id)"><img src="images/Trash.png"></a></td>
+								</tr>
+							</table>
+							<div>
+								<a ui-sref="teamAdd"><button type="button" class="btn btn-primary pull-right ">Add</button></a>
+							</div>
+							<div align="center"  colspan="6">
+							
+							<div class="text-center">
+								<pagination total-items="totalCount" ng-change="pageChanged()"
+									items-per-page="pageSizeSelected" direction-links="true"
+									ng-model="pageIndex" max-size="maxSize" class="pagination pag_change"
+									boundary-links="true" rotate="false" num-pages="numPages"></pagination>
+								<!--  <a class="btn btn-primary">Page: {{pageIndex}} / {{numPages}}</a>   -->
+							</div>
+						</div>
+						
+						</div>
+				</div>
+			</div>
+		</div>

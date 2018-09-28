@@ -1,0 +1,36 @@
+<div class="wrapper">
+	<top-dir></top-dir>
+		<side-dir></side-dir>
+		<div class="content">
+				<div class="container">
+					<div class="col-md-offset-2 col-md-8">
+						<div class="Emp_mar_top addEmployeelabel" name="cr" >
+							<h3 class="head_change">Cost Ratio</h3>
+							<form name="contacttype" class="btn_mar_top">
+								<div  class="form-group row">
+									<label for="bill" class="control-label col-md-3"> Cost Ratio : </label>
+									<div class="col-md-9">
+										<input type="text" class="form-control" ng-model="costRget.costRatio" name="cRatio" required/>
+										<div class="has-error" ng-show="cr.cRatio.$dirty" >
+					                    	<span style="color:Red" class="error" ng-show="cr.cRatio.$error.required"> Cost Ratio is Required !</span>
+					                  	</div>
+									</div>
+								</div>
+												
+							</form>
+								<div class="col-md-12">
+									<button type="button" ui-sref="costRatioTable" class="btn btn-primary btn_mar_top">Back</button>
+									<button type="button" class="btn btn-primary pull-right btn_mar_top" ng-click="costRatioEditList()" ng-disabled="cr.$invalid">Update</button>
+									<button type="button" class="btn btn-primary pull-right btn_mar_top" ng-click="costRatioGetById()">Reset</button>
+								
+									
+									
+								</div>
+			
+							
+							</div>
+						</div>
+					</div>
+				</div>
+		</div>
+</div>

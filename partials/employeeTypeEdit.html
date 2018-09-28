@@ -1,0 +1,34 @@
+<div class="wrapper">
+	<top-dir></top-dir>
+		<side-dir></side-dir>
+		<div class="content">
+				<div class="container">
+					<div class="col-md-offset-2 col-md-8">
+						<div class="Emp_mar_top addEmployeelabel">
+							<h3 class="head_change">Employee Type</h3>
+							<form name="emp" class="btn_mar_top">
+								<div  class="form-group row">
+									<label  class="control-label col-md-3"> Employee Type : </label>
+									<div class="col-md-9">
+										<input type="text" class="form-control" ng-model="empGetList.employeeType" name="emptype" required/>
+										<div class="has-error" ng-show="emp.emptype.$dirty" >
+					                    	<span style="color:Red" class="error" ng-show="emp.emptype.$error.required"> Employee Type is Required !</span>
+					                  	</div>
+									</div>
+								</div>
+												
+							</form>
+								<div class="col-md-12">
+									<button type="button" ui-sref="employeeTypeTable" class="btn btn-primary btn_mar_top">Back</button>
+									
+									<button type="button" class="btn btn-primary pull-right btn_mar_top" ng-click="empById()">Reset</button>
+									<button type="button" class="btn btn-primary pull-right btn_mar_top" ng-click="emplyoeeTypeEdit()" ng-disabled="emp.$invalid">Update</button>
+								</div>
+			
+							
+							</div>
+						</div>
+					</div>
+				</div>
+		</div>
+</div>

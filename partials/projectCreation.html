@@ -1,0 +1,195 @@
+<div class="wrapper">
+	<top-dir></top-dir>
+		<side-dir></side-dir>
+		<div class="content">
+				<div class="container">
+					<div class="col-md-offset-2 col-md-8">
+						<div class="Emp_mar_top addEmployeelabel">
+							<div class="form-horizontal">
+								<h3 style="color:#192766;text-align:center;" >Project Creation</h3>
+								<fieldset>
+  									<legend>Project:</legend>
+  									<div class="shadow">
+										<!-- <div class="form-group">
+											<label for="projectstatus" class="control-label col-md-3" > Employee Type : </label>
+											<div class="col-md-9">
+												<select type="text" class="form-control" ng-model="project.employeeType.id" ng-options="list.id as list.employeeType for list in empType" ng-change="EmployeeType(project.employeeType.id)">
+													<option value="">select an option</option>
+												</select>
+											</div>
+										</div> -->
+										<div class="form-group">
+											<label for="employee" class="control-label col-md-3" > Employee: </label>
+											<div class="col-md-9">
+													<select class="form-control" ng-model="project.employeeList.id" ng-options="list.id as list.employeeName for list in employee" ng-change="getEmployee(project.employeeList.id)">
+														<option value="">select an option</option>
+													</select>
+											</div>
+										</div>
+										<div class="form-group">
+											<label for="projecttype" class="control-label col-md-3" > Project Type : </label>
+											<div class="col-md-9">
+											<!-- 	<input type="limit" class="form-control" ng-model="project.projectType"> -->
+												<select class="form-control" ng-model="project.projectType.id" ng-options="list.id as list.projectTypeName for list in pjtlist" ng-change="projectList(project.projectType.id)">
+													<option value="">select an option</option>
+												</select>
+											</div>
+										</div>
+										<div class="form-group">
+											<label for="projectname" class="control-label col-md-3"> Project Name : </label>
+											<div class="col-md-9">
+												<input type="text" ng-model="project.projectName" class="form-control" placeholder="project Name">
+											</div>
+										</div>
+										<div class="form-group">
+											<label for="projectstatus" class="control-label col-md-3" > Project Status : </label>
+											<div class="col-md-9">
+												<select type="text" class="form-control" ng-model="project.status.id" ng-options="list.id as list.status for list in statusList" ng-change="status(project.status.id)">
+													<option value="">select an option</option>
+												</select>
+											</div>
+										</div>
+										<div class="form-group">
+											<div class="row">
+												<div class="col-md-6">
+													<div class="form-group">
+														<label for="projectdate" class="control-label col-md-6">  Start Date : </label>
+														<div class="col-md-6">
+															<input type="date"  ng-model="project.startingDate" class="form-control" >
+														</div>
+													</div>
+												</div>
+												<div class="col-md-6">
+													<div class="form-group">
+														<label for="projectEnd" class="control-label col-md-6" >  End Date : </label>
+														<div class="col-md-6">
+															<input type="date" class="form-control" ng-model="project.endingDate" >
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+										<div class="form-group">
+											 <div class="row">
+												<div class="col-md-6">
+													<div class="form-group">
+														<label for="projectdate" class="control-label col-md-6"> Deployment Start Date : </label>
+														<div class="col-md-6">
+															<input type="date"  ng-model="project.deployementStartDate" class="form-control" >
+														</div>
+													</div>
+												</div>
+												<div class="col-md-6">
+													<div class="form-group">
+														<label for="projectEnd" class="control-label col-md-6" > Deployment End Date : </label>
+														<div class="col-md-6">
+															<input type="date" class="form-control" ng-model="project.deployementEndDate" >
+														</div>
+													</div>
+												</div>
+										</div>
+									</div>
+								</fieldset>
+								<fieldset>
+  									<legend>Customer:</legend>
+  									<div class="shadow">
+										<div class="form-group">
+											<label for="projecttype" class="control-label col-md-4" > Customer Name : </label>
+											<div class="col-md-8">
+												 <select class="form-control" ng-model="project.customerId.id" ng-options="list.id as list.nameOfTheCustomer for list in customerlist" ng-change="customer(project.customerId.id)">
+													<option value="">select an option</option>
+												</select> 
+											<!-- 	<input type="text" class="form-control" ng-model="project.customerName"> -->
+											</div>
+										</div>
+										<!-- </div> -->
+										<!-- <div class="form-group">
+											<label for="projectduration" class="control-label col-md-3" > Duration : </label>
+											<div class="col-md-9">
+												<input type="text" class="form-control" ng-model="project.duration" ng-value="duration">
+											</div>
+										</div> -->
+										
+										<div class="form-group">
+											<label for="location" class="control-label col-md-4" > Location : </label>
+											<div class="col-md-8">
+												<select type="text" class="form-control" ng-model="project.location.id" ng-options="list.id as list.locationName for list in locationlist" ng-change="location(project.location.id)">
+													<option value="">select an option</option>
+												</select>
+											</div>
+										</div>
+									</div>
+								</fieldset>
+								<fieldset>
+  									<legend >Budget:</legend>
+  									<div class="shadow">
+	  									<div class="form-group">
+											<label for="accommdation" class="control-label col-md-4" > Accommodation : </label>
+											<div class="col-md-8">
+												<input type="radio" ng-model="project.accommdation" value="yes"> Yes
+												<input type="radio" ng-model="project.accommdation" value="no"> No
+											</div>
+										</div>
+										<div class="form-group">
+											<label for="travel" class="control-label col-md-4" > Travelling  : </label>
+										  	<div class="col-md-8">
+										   		<input type="radio" ng-model="project.travel" value="yes"> Yes
+												<input type="radio" ng-model="project.travel" value="no"> No
+										    </div>
+										</div>
+										<div class="form-group">
+											<label for="billing" class="control-label col-md-4" > Billing Model : </label>
+											<div class="col-md-8">
+												 <select class="form-control" ng-model="project.modeOfBilling.id" ng-options="list.id as list.modeOfBilling for list in billingList" ng-change="Billing(project.modeOfBilling.id)">
+													<option value="">select an option</option>
+												</select> 
+									
+											</div>
+										</div>
+										<div class="form-group">
+											<label for="gst" class="control-label col-md-4" > RateType : </label>
+											<div class="col-md-8">
+												<!-- <input type="radio" ng-model="project.rateType" value="perday"> Include GST
+												<input type="radio" ng-model="project.rateType" value="excludeGSt"> Exclude GST -->
+												<select class="form-control" ng-model="project.rateType">
+													<option value="">select an option</option>
+													<option value="perday">Per Day</option>
+													<option value="perweek">Per Week</option>
+													<option value="permonth">Per Month</option>
+													<option value="peryear">Per Year</option>
+												</select>
+											</div>
+										</div>
+										<div class="form-group">
+											<label for="gst" class="control-label col-md-4" > GST : </label>
+											<div class="col-md-8">
+												<input type="radio" ng-model="project.gst" value="includeGSt"> Include GST
+												<input type="radio" ng-model="project.gst" value="excludeGSt"> Exclude GST
+											</div>
+										</div>
+										<div class="form-group">
+											<label for="gst" class="control-label col-md-4" > BGV : </label>
+											<div class="col-md-8">
+												<input type="radio" ng-model="project.bgv" value="yes"> Yes
+												<input type="radio" ng-model="project.bgv" value="no"> No
+											</div>
+										</div>
+										<div class="form-group">
+											<label for="finalBudget" class="control-label col-md-4" > Amount : </label>
+											<div class="col-md-8">
+												<input type="text" class="form-control" ng-model="project.budget" placeholder="amount">
+											</div>
+										</div>
+									
+									</div>
+								</fieldset>
+							</div>
+								<button type="button" class="btn btn-primary  Emp_mar_top" ui-sref="projectCreationList">Back</button>
+								<button type="button" class="btn btn-primary pull-right  Emp_mar_top" ng-click="projectCreation()">Save</button>
+							</div>
+							
+						</div>
+						</div>
+					</div>
+				
+</div>

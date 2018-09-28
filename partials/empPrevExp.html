@@ -1,0 +1,221 @@
+	<div class="wrapper">
+	<top-dir></top-dir>
+		<side-dir></side-dir>
+		<div class="content">
+			<div class="btn_mar_top ">	
+			
+			<div class="container">
+		<div id="form-container">
+  
+	      <div class="page-header text-center">
+	          <h2>Employee</h2>
+	         
+	          <div id="status-buttons" class="text-center">
+	              <a ui-sref-active="active" ui-sref="basicinfo"><span>1</span> Basic info</a>
+	              <a ui-sref-active="active" ui-sref="addinfo"><span>2</span> Add info</a>
+	               <a ui-sref-active="active" ui-sref="jobinfo"><span>3</span>Job Info</a>
+	               <a ui-sref-active="active" ui-sref="kye"><span>4</span>KYE</a>
+	               <a ui-sref-active="active" ui-sref="prevexp"><span>5</span>Prev Exp</a>
+	               <a ui-sref-active="active" ui-sref="qualification"><span>6</span>Qualification</a>
+	                <!-- <a ui-sref-active="active" ui-sref="salary"><span>7</span>Salary</a>
+	                <a ui-sref-active="active" ui-sref="insurance"><span>8</span>Insurance</a>	 -->
+          </div>
+	      </div>
+	      
+	     
+	   <h3 style= "margin-left:40px;">Previous Experience</h3>
+	          <form class="form-horizontal addEmployeelabel " name="aepe">
+                                  <div class="row">
+							  	       <div class="form-group col-md-6">
+									    <label class="control-label col-md-4" for="employee">Company 1: :<span style="color:Red"> * </span></label>
+									    <div class="col-md-6"> 
+									      <input type="text" class="form-control" ng-model="employee.employeePreviousExperienceDetails.company1Name" id="passport" name="cm1name"  placeholder="enter first company name" required>
+									      <span style="color:Red"  ng-if="aepe.cm1name.$error.required && aepe.cm1name.$dirty">passport is required</span>
+									    </div>
+							  	      </div>
+										<div class="form-group col-md-6">
+								    <label class="control-label col-md-4" for="employee"> Company1 Date of Joining:<span style="color:Red"> * </span></label>
+								    <div class="col-md-6">
+								      <input type="date" class="form-control" ng-model="employee.employeePreviousExperienceDetails.company1DateOfJoining"  name="cm1datej"   required/>
+								        <span style="color:Red"  ng-show="aepe.cm1datej.$error.required && aepe.cm1datej.$touched">select date of joining</span>
+								    </div>
+								</div>
+							  	     
+							  	      </div>
+							  	           <div class="row">
+										<div class="form-group col-md-6">
+								    <label class="control-label col-md-4" for="employee"> Company1 Date od Exit:<span style="color:Red"> * </span></label>
+								    <div class="col-md-6">
+								      <input type="date" class="form-control" ng-model="employee.employeePreviousExperienceDetails.company1DateOfExit"  name="cm1datee"   required/>
+								        <span style="color:Red"  ng-show="aepe.cm1datee.$error.required && aepe.cm1datee.$touched">select date of Exit</span>
+								    </div>
+								</div>
+								    <div class="form-group col-md-6">
+									    <label class="control-label col-md-4" for="employee">Company1 Salary: :<span style="color:Red"> * </span></label>
+									    <div class="col-md-6"> 
+									      <input type="text" class="form-control" ng-model="employee.employeePreviousExperienceDetails.company1Salary" id="passport" name="cm1sal"  placeholder="enter salary" required>
+									      <span style="color:Red"  ng-if="aepe.cm1sal.$error.required && aepe.cm1sal.$dirty">passport is required</span>
+									    </div>
+							  	      </div>
+							  	     
+							  	      </div>
+							  	              <div class="row">
+										<div class="form-group col-md-6">
+								    <label class="control-label col-md-4" for="employee"> Company1 Location:<span style="color:Red"> * </span></label>
+								    <div class="col-md-6">
+								      <input type="date" class="form-control" ng-model="employee.employeePreviousExperienceDetails.company1Location"  name="cm1loc"   required/>
+								        <span style="color:Red"  ng-show="aepe.cm1loc.$error.required && aepe.cm1loc.$touched">select date of joining</span>
+								    </div>
+								</div>
+								    <div class="form-group col-md-6">
+									    <label class="control-label col-md-4" for="employee">Company 2: <span style="color:Red"> * </span></label>
+									    <div class="col-md-6"> 
+									      <input type="text" class="form-control" ng-model="employee.employeePreviousExperienceDetails.company2Name" id="passport" name="cm2name"  placeholder="enter company name" required>
+									      <span style="color:Red"  ng-if="aepe.cm2name.$error.required && aepe.cm2name.$dirty">passport is required</span>
+									    </div>
+							  	      </div>
+							  	     
+							  	      </div>
+							  	            <div class="row">
+										<div class="form-group col-md-6">
+								    <label class="control-label col-md-4" for="employee"> Company2 Date of Joining:<span style="color:Red"> * </span></label>
+								    <div class="col-md-6">
+								      <input type="date" class="form-control" ng-model="employee.employeePreviousExperienceDetails.company2DateOfJoining"  name="cm2datej"   required/>
+								        <span style="color:Red"  ng-show="aepe.cm2datej.$error.required && aepe.cm2datej.$touched">select date of joining</span>
+								    </div>
+								</div>
+								    <div class="form-group col-md-6">
+									    <label class="control-label col-md-4" for="employee">Company2 Date of Exit: :<span style="color:Red"> * </span></label>
+									    <div class="col-md-6"> 
+									      <input type="text" class="form-control" ng-model="employee.employeePreviousExperienceDetails.company2DateOfExit" id="passport" name="cm2datee"   required>
+									      <span style="color:Red"  ng-show="aepe.cm2datee.$error.required && aepe.cm2datee.$dirty">passport is required</span>
+									    </div>
+							  	      </div>
+							  	     
+							  	      </div>
+							  	      <div class="row">
+										<div class="form-group col-md-6">
+								    <label class="control-label col-md-4" for="employee"> Company2 Salary:<span style="color:Red"> * </span></label>
+								    <div class="col-md-6">
+								      <input type="date" class="form-control" ng-model="employee.employeePreviousExperienceDetails.company2Salary"  name="cm2sal" placeholder="enter salary"  required/>
+								          <span style="color:Red"  ng-show="aepe.cm2sal.$error.required && aepe.cm2sal.$dirty">required</span>
+								    </div>
+								</div>
+								    <div class="form-group col-md-6">
+									    <label class="control-label col-md-4" for="employee">Company2 Location: :<span style="color:Red"> * </span></label>
+									    <div class="col-md-6"> 
+									      <input type="text" class="form-control" ng-model="employee.employeePreviousExperienceDetails.company2Location" id="passport" name="cm2loc"  placeholder="enter company location" required>
+									      <span style="color:Red"  ng-show="aepe.cm2loc.$error.required && aepe.cm2loc.$dirty">required</span>
+									    </div>
+							  	      </div>
+							  	     
+							  	      </div>
+							  	        <div class="row">
+							  	       <div class="form-group col-md-6">
+									    <label class="control-label col-md-4" for="employee">Company 3: <span style="color:Red"> * </span></label>
+									    <div class="col-md-6"> 
+									      <input type="text" class="form-control" ng-model="employee.employeePreviousExperienceDetails.company3Name" id="passport" name="cm3name"  placeholder="enter company name" required>
+									      <span style="color:Red"  ng-show="aepe.cm3name.$error.required && aepe.cm3name.$dirty">required</span>
+									    </div>
+							  	      </div>
+										<div class="form-group col-md-6">
+								    <label class="control-label col-md-4" for="employee"> Company3 Date of Joining:<span style="color:Red"> * </span></label>
+								    <div class="col-md-6">
+								      <input type="date" class="form-control" ng-model="employee.employeePreviousExperienceDetails.company3DateOfJoining"  name="cm3datej"   required/>
+								        <span style="color:Red"  ng-show="aepe.cm3datej.$error.required && aepe.cm3datej.$touched">select date of joining</span>
+								    </div>
+								</div>
+							  	     
+							  	      </div>
+							  	           <div class="row">
+										<div class="form-group col-md-6">
+								    <label class="control-label col-md-4" for="employee"> Company3 Date of Exit:<span style="color:Red"> * </span></label>
+								    <div class="col-md-6">
+								      <input type="date" class="form-control" ng-model="employee.employeePreviousExperienceDetails.company3DateOfExit"  name="cm3datee"   required/>
+								        <span style="color:Red"  ng-show="aepe.cm3datee.$error.required && aepe.cm3datee.$touched">select date of joining</span>
+								    </div>
+								</div>
+								    <div class="form-group col-md-6">
+									    <label class="control-label col-md-4" for="employee">Company3 Salary: :<span style="color:Red"> * </span></label>
+									    <div class="col-md-6"> 
+									      <input type="text" class="form-control" ng-model="employee.employeePreviousExperienceDetails.company3Salary"  name="cm3sal"  placeholder="enter salary" required>
+									      <span style="color:Red"  ng-if="aepe.cm3sal.$error.required && aepe.cm3sal.$dirty">passport is required</span>
+									    </div>
+							  	      </div>
+							  	     
+							  	      </div>
+							  	              <div class="row">
+										<div class="form-group col-md-6">
+								    <label class="control-label col-md-4" for="employee"> Company3 Location:<span style="color:Red"> * </span></label>
+								    <div class="col-md-6">
+								      <input type="date" class="form-control" ng-model="employee.employeePreviousExperienceDetails.company3Location"  name="cm3loc"   required/>
+								        <span style="color:Red"  ng-show="aepe.cm3loc.$error.required && aepe.cm3loc.$touched">select date of joining</span>
+								    </div>
+								</div>
+							  	      </div>
+							  	      <div class="row">
+							  	       <div class="form-group col-md-6">
+									    <label class="control-label col-md-4" for="employee">Company 4: <span style="color:Red"> * </span></label>
+									    <div class="col-md-6"> 
+									      <input type="text" class="form-control" ng-model="employee.employeePreviousExperienceDetails.company4Name" id="passport" name="cm4name"  placeholder="enter company name" required>
+									      <span style="color:Red"  ng-show="aepe.cm4name.$error.required && aepe.cm4name.$dirty">required</span>
+									    </div>
+							  	      </div>
+										<div class="form-group col-md-6">
+								    <label class="control-label col-md-4" for="employee"> Company4 Date of Joining:<span style="color:Red"> * </span></label>
+								    <div class="col-md-6">
+								      <input type="date" class="form-control" ng-model="employee.employeePreviousExperienceDetails.company4DateOfJoining"  name="cm4datej"   required/>
+								        <span style="color:Red"  ng-show="aepe.cm4datej.$error.required && aepe.cm4datej.$touched">select date of joining</span>
+								    </div>
+								</div>
+							  	     
+							  	      </div>
+							  	           <div class="row">
+										<div class="form-group col-md-6">
+								    <label class="control-label col-md-4" for="employee"> Company4 Date of Exit:<span style="color:Red"> * </span></label>
+								    <div class="col-md-6">
+								      <input type="date" class="form-control" ng-model="employee.employeePreviousExperienceDetails.company4DateOfExit"  name="cm4datee"   required/>
+								        <span style="color:Red"  ng-show="aepe.cm4datee.$error.required && aepe.cm4datee.$touched">select date of joining</span>
+								    </div>
+								</div>
+								    <div class="form-group col-md-6">
+									    <label class="control-label col-md-4" for="employee">Company4 Salary: :<span style="color:Red"> * </span></label>
+									    <div class="col-md-6"> 
+									      <input type="text" class="form-control" ng-model="employee.employeePreviousExperienceDetails.company4Salary"  name="cm3sal"  placeholder="enter salary" required>
+									      <span style="color:Red"  ng-if="aepe.cm4sal.$error.required && aepe.cm4sal.$dirty">passport is required</span>
+									    </div>
+							  	      </div>
+							  	     
+							  	      </div>
+							  	              <div class="row">
+										<div class="form-group col-md-6">
+								    <label class="control-label col-md-4" for="employee"> Company4 Location:<span style="color:Red"> * </span></label>
+								    <div class="col-md-6">
+								      <input type="date" class="form-control" ng-model="employee.employeePreviousExperienceDetails.company4Location"  name="cm4loc"   required/>
+								        <span style="color:Red"  ng-show="aepe.cm4loc.$error.required && aepe.cm4loc.$touched">select date of joining</span>
+								    </div>
+								</div>
+							  	      </div>
+								
+							
+									
+	<div class="form-group">
+		<div class="col-md-11">
+			<button type="button" class="btn btn-primary pull-right" ui-sref="qualification">Next Section</button>
+			<button type="button" class="btn btn-primary " ui-sref="kye">Back</button>
+		</div>
+	</div>
+</form>
+	   	
+	  
+	  </div>
+	  	
+	</div>
+	
+    
+    </div>
+</div>
+	
+    </div>
+    	
+		

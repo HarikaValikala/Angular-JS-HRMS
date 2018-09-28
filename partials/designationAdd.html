@@ -1,0 +1,45 @@
+<div class="wrapper">
+	<top-dir></top-dir>
+		<side-dir></side-dir>
+		<div class="content">
+				<div class="container">
+					<div class="col-md-offset-2 col-md-8">
+						<form class="Emp_mar_top addEmployeelabel" name="des">
+							<div class="form-horizontal">
+								<h3 class="head_change">Designation</h3>
+								<!-- <div class="form-group btn_mar_top">
+									<label for="designation" class="control-label col-md-3"> Business Unit :<span style="color:Red"> * </span> </label>
+									<div class="col-md-9">
+										<select class='form-control' ng-model="b1.id"  ng-options="detail1.id as detail1.nameOfBusinessUnit for detail1 in budetails" ng-change="subbusunit(b1.id)">
+							  			<option value="">Choose an option</option>
+							  			</select>
+									</div>
+								</div> -->
+								<div class="form-group">
+									<label for="designation" class="control-label col-md-3">SubBusiness Unit :<span style="color:Red"> * </span></label>
+									<div class="col-md-9">
+										<select class='form-control' ng-model="sb1.id"  ng-options="detail.id as detail.subBusinessUnitName for detail in sbudetails" ng-change="sbuGet(sb1.id)">
+										<option value="">Choose an option</option>
+							  			</select>
+									</div>
+								</div>
+								<div class="form-group">
+									<label for="designation" class="control-label col-md-3">Designation :<span style="color:Red"> * </span> </label>
+									<div class="col-md-9">
+										<input type="text" class="form-control" ng-model="designation" placeholder="designation">
+										<span style="color:Red"  ng-if="des.subbusinessunit.$error.required && des.subbusinessunit.$dirty">desigation is required</span>
+                                        <span style="color:Red" ng-show="des.subbusinessunit.$error.pattern">only strings are allowed</span>
+										
+									</div>
+								</div>
+							</div>
+							<div class="col-md-12">
+									<button type="button" ui-sref="designationTable" class="btn btn-primary btn_mar_top">Back</button>	
+									<button type="button" class="btn btn-primary pull-right btn_mar_top" ng-click="desigPost()" ng-disabled="des.$invalid">Save</button>
+								</div>
+							<a ui-sref="designationTable"></a>
+						</form>
+					</div>
+				</div>
+		</div>
+</div>

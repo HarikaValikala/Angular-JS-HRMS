@@ -1,0 +1,32 @@
+<div class="wrapper">
+	<top-dir></top-dir>
+		<side-dir></side-dir>
+		<div class="content">
+				<div class="container">
+					<div class="col-md-offset-2 col-md-8">
+						<div class="Emp_mar_top addEmployeelabel">
+							<h3 class="head_change">Address Type</h3>
+							<form name="cusAdd" class="btn_mar_top">
+								<div  class="form-group row">
+									<label for="bill" class="control-label col-md-3"> Address Type : </label>
+									<div class="col-md-9">
+										<input type="text" class="form-control" ng-model="cusadrsGetList.addressType" name="type" required/>
+										<div class="has-error" ng-show="cusAdd.type.$dirty" >
+					                    	<span style="color:Red" class="error" ng-show="cusAdd.type.$error.required"> Address Type is Required !</span>
+					                  	</div>
+									</div>
+								</div>
+												
+							</form>
+								<div class="col-md-12">
+									<button type="button" ui-sref="customerAddressTypeTable" class="btn btn-primary btn_mar_top">Back</button>
+									<button type="button" class="btn btn-primary pull-right btn_mar_top" ng-click="cusadrsById()">Reset</button>
+									<button type="button" class="btn btn-primary pull-right btn_mar_top" ng-click="cusadrsEdit()" ng-disabled="cusAdd.$invalid">Update</button>
+								</div>
+			
+							</div>
+						</div>
+					</div>
+				</div>
+		</div>
+</div>

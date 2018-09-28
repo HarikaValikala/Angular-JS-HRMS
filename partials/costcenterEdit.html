@@ -1,0 +1,32 @@
+<div class="wrapper">
+	<top-dir></top-dir>
+		<side-dir></side-dir>
+		<div class="content">
+				<div class="container">
+					<div class="col-md-offset-2 col-md-8">
+						<div class="Emp_mar_top addEmployeelabel">
+							<h3 style="color:#192766">Cost Center</h3>
+							<form class="form-group Emp_mar_top" name="cc">
+								<label for="costCenter" class="control-label col-md-3"> Cost Center : </label>
+								<div class="col-md-9">
+									<input type="text" class="form-control" ng-model="costget.nameOfTheCostCenter" name="costcenter" required/>
+									<!--  <div class="has-error" ng-show="cc.costcenter.$dirty" >
+					                    <span style="color:Red" class="error" ng-show="cc.costcenter.$error.required"> Enter Only Numbers</span>
+					                  </div> -->
+					                  <!-- <span style="color:red" ng-show="cc.costcenter.$dirty && cc.costcenter.$invalid">
+										<span ng-show="cc.costcenter.$error.required">costCenter is required.</span>
+									</span> -->
+								</div>
+						
+							<div class="col-md-12">
+								<button type="button" ui-sref="costCenterTable" class="btn btn-primary btn_mar_top">Back</button>
+								<button type="button" class="btn btn-primary pull-right btn_mar_top" ng-disabled="cc.$invalid" ng-click="costEditList()" >Update</button>
+								<span><button type="button" class="btn btn-primary pull-right btn_mar_top"  ng-click="costGetbyid()">Reset</button></span>
+							</div>
+								</form>
+						</div>
+					</div>
+				</div>
+				
+		</div>
+</div>

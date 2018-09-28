@@ -1,0 +1,54 @@
+<div class="wrapper">
+	<top-dir></top-dir>
+		<side-dir></side-dir>
+		<div class="content">
+				<div class="container">
+					<div class="col-md-offset-2 col-md-8">
+						<div class="Emp_mar_top addEmployeelabel">
+							<form class="form-horizontal" name="teamForm">
+								<h3 style="color:#192766">Team</h3>
+								
+								<div class="form-group Emp_mar_top">
+								<p style="color:Red">Required Fields * </p>
+									<!-- <p style="color:Red">Please select the options </p> -->
+									<label for="costCenter" class="control-label col-md-3"> Business Unit :<span style="color:Red"> * </span></label>
+									<div class="col-md-9">
+										<select class='form-control' name="bu" ng-model="bu.id"  ng-options="detail.id as detail.nameOfBusinessUnit for detail in budetails" ng-change="subbusunit(bu.id)" required>
+									    <option value="">Choose an option</option>
+							  			</select>
+							  			 <p style="color:Red"  ng-show="teamForm.bu.$error.required && teamForm.bu.$touched"> Please select Business Unit !</p>
+									</div>
+								</div>
+								<div class="form-group">
+									<label for="costCenter" class="control-label col-md-3"> Sub Business Unit <span style="color:Red"> * </span> :</label>
+									<div class="col-md-9">
+										<select class='form-control' name="sbu" ng-model="sbu.id"  ng-options="detail.id as detail.subBusinessUnitName for detail in list" required>
+									    <option value="">Choose an option</option>
+							  			</select>
+							  		<!-- 	<div class="has-error" ng-show="teamForm.sbu.$dirty" >
+					                    	<span style="color:Red" class="error" ng-show="teamForm.sbu.$error.required"> Business Unit is Required!</span>
+					                  	</div>  -->
+						                <p style="color:red" ng-show="teamForm.sbu.$error.required && teamForm.sbu.$touched">
+											Please select SubBusiness Unit !
+										</p>
+							  			
+									</div>
+								</div>
+								<div class="form-group">
+									<label for="costCenter" class="control-label col-md-3"> Enter name of the Team <span style="color:Red"> * </span>: </label>
+									<div class="col-md-9">
+										<input type="text" class="form-control" ng-model="nameOfTheTeam" name="name" placeholder="Enter Team" required>
+										 <p style="color:red" ng-show="teamForm.name.$error.required && teamForm.name.$touched">
+											Please Enter Team Name!
+										</p>
+										
+									</div>
+								</div>
+							</form>
+							<button type="button" ui-sref="teamTable" class="btn btn-primary btn_mar_top">Back</button>	
+							<button type="button" class="btn btn-primary pull-right btn_mar_top" ng-click="teamPostList()" ng-disabled="teamForm.$invalid">Save</button>
+						</div>
+					</div>
+				</div>
+		</div>
+</div>

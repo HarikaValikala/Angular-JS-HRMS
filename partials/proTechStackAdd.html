@@ -1,0 +1,32 @@
+<div class="wrapper">
+	<top-dir></top-dir>
+		<side-dir></side-dir>
+		<div class="content">
+				<div class="container">
+					<div class="col-md-offset-2 col-md-8">
+						<div class="Emp_mar_top addEmployeelabel">
+							<h3 class="head_change">Project Technical Stack</h3>
+							<div class="btn_mar_top">
+							<form name="proTech">
+								<div  class="form-group row">
+									<label for="tag" class="control-label col-md-3"> Project Technical Stack : <span style="color:Red">*</span></label>
+									<div class="col-md-9">
+										<input type="text" class="form-control" ng-model="postProTech.projectTechStack" name="techStack" placeholder="Enter Project Technical Stack" required/>
+										 <div class="has-error" ng-show="proTech.techStack.$dirty" >
+					                    	<span style="color:Red" class="error" ng-show="proTech.techStack.$error.required">Project Technical Stack is Required !</span>
+					                  	</div>
+									</div>
+								</div>
+								
+								</form>
+								</div>
+								<div class="col-md-12">
+									<button type="button" ui-sref="proTechStackTable" class="btn btn-primary btn_mar_top">Back</button>	
+									<button type="button" class="btn btn-primary pull-right btn_mar_top" ng-click="proTechPost()" ng-disabled="proTech.$invalid">Save</button>
+								</div>
+								
+						</div>
+					</div>
+				</div>
+			</div>
+	</div>

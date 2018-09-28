@@ -1,0 +1,238 @@
+	<div class="wrapper">
+	<top-dir></top-dir>
+		<side-dir></side-dir>
+		<div class="content">
+			<div class="btn_mar_top ">	
+			
+			<div class="container">
+		<div id="form-container">
+  
+	      <div class="page-header text-center">
+	          <h2>Employee</h2>
+	          
+	          <div id="status-buttons" class="text-center  ">
+	              <a ui-sref-active="active" ui-sref="basicinfo"><span>1</span> Basic info</a>
+	              <a ui-sref-active="active" ui-sref="addinfo"><span>2</span> Add info</a>
+	               <a ui-sref-active="active" ui-sref="jobinfo"><span>3</span>Job Info</a>
+	               <a ui-sref-active="active" ui-sref="kye"><span>4</span>KYE</a>
+	               <a ui-sref-active="active" ui-sref="prevexp"><span>5</span>Prev Exp</a>
+	               <a ui-sref-active="active" ui-sref="qualification"><span>6</span>Qualification</a>
+	               <!--  <a ui-sref-active="active" ui-sref="salary"><span>7</span>Salary</a>
+	                <a ui-sref-active="active" ui-sref="insurance"><span>8</span>Insurance</a> -->
+          </div>
+         
+	      </div>
+	      
+	     <h3 style= "margin-left:40px;">Qualification</h3>
+	   
+	          <form class="form-horizontal addEmployeelabel " name="aeqq">
+                                  <div class="row">
+							  	       <div class="form-group col-md-6">
+									    <label class="control-label col-md-4" for="employee">School Name :<span style="color:Red"> * </span></label>
+									    <div class="col-md-6"> 
+									      <input type="text" class="form-control" ng-model="employee.employeeQualificationDetails.schoolName"  name="sname"  placeholder="enter school name" required>
+									      <span style="color:Red"  ng-if="aeq.sname.$error.required && aeq.sname.$dirty">required</span>
+									    </div>
+							  	      </div>
+										<div class="form-group col-md-6">
+								    <label class="control-label col-md-4" for="employee"> School Board :<span style="color:Red"> * </span></label>
+								    <div class="col-md-6">
+								      <input type="date" class="form-control" ng-model="employee.employeeQualificationDetails.schoolBoard"  name="sboard"   placeholder="enter school board"  required/>
+								       <span style="color:Red"  ng-if="aeq.sboard.$error.required && aeq.sboard.$dirty">required</span>
+								    </div>
+								</div>
+							  	  </div>
+							  	           <div class="row">
+										<div class="form-group col-md-6">
+								    <label class="control-label col-md-4" for="employee"> Year Of Passing:<span style="color:Red"> * </span></label>
+								    <div class="col-md-6">
+								      <input type="date" class="form-control" ng-model="employee.employeeQualificationDetails.schoolYearOfPassing"  name="syop"  placeholder="enter year of passing" required/>
+								        <span style="color:Red"  ng-if="aeq.syop.$error.required && aeq.syop.$dirty">required</span>
+								    </div>
+								</div>
+								    <div class="form-group col-md-6">
+									    <label class="control-label col-md-4" for="employee">Marks(%): :<span style="color:Red"> * </span></label>
+									    <div class="col-md-6"> 
+									      <input type="text" class="form-control" ng-model="employee.employeeQualificationDetails.schoolMarks"  name="smarks"  placeholder="enter percentage" required>
+									      <span style="color:Red"  ng-if="aeq.smarks.$error.required && aeq.smarks.$dirty">required</span>
+									    </div>
+							  	      </div>
+							  	     
+							  	      </div>
+							  	              <div class="row">
+										<div class="form-group col-md-6">
+								    <label class="control-label col-md-4" for="employee"> Inter College Name :<span style="color:Red"> * </span></label>
+								    <div class="col-md-6">
+								      <input type="date" class="form-control" ng-model="employee.employeeQualificationDetails.interCollegeName"  name="icolle" placeholder="enter college name"  required/>
+								        <span style="color:Red"  ng-show="aeq.icolle.$error.required && aeq.icolle.$touched">required</span>
+								    </div>
+								</div>
+								    <div class="form-group col-md-6">
+									    <label class="control-label col-md-4" for="employee">Inter Board: <span style="color:Red"> * </span></label>
+									    <div class="col-md-6"> 
+									      <input type="text" class="form-control" ng-model="employee.employeeQualificationDetails.interCollegeBoard"  name="iboard"  placeholder="enter inter board" required>
+									      <span style="color:Red"  ng-if="aeq.iboard.$error.required && aeq.iboard.$dirty">required</span>
+									    </div>
+							  	      </div>
+							  	     
+							  	      </div>
+							  	            <div class="row">
+										<div class="form-group col-md-6">
+								    <label class="control-label col-md-4" for="employee">Group:<span style="color:Red"> * </span></label>
+								    <div class="col-md-6">
+								      <input type="date" class="form-control" ng-model="employee.employeeQualificationDetails.interGroup"  name="igroup" placeholder="enter group"  required/>
+								        <span style="color:Red"  ng-show="aeq.igroup.$error.required && aeq.igroup.$touched">required</span>
+								    </div>
+								</div>
+								    <div class="form-group col-md-6">
+									    <label class="control-label col-md-4" for="employee">Year Of Passing: :<span style="color:Red"> * </span></label>
+									    <div class="col-md-6"> 
+									      <input type="text" class="form-control" ng-model="employee.employeeQualificationDetails.interYearOfPassing"  name="iyop"  placeholder="enter year of passing" required>
+									      <span style="color:Red"  ng-if="aeq.iyop.$error.required && aeq.iyop.$dirty">required</span>
+									    </div>
+							  	      </div>
+							  	     
+							  	      </div>
+							  	      <div class="row">
+										<div class="form-group col-md-6">
+								    <label class="control-label col-md-4" for="employee">Marks(%):<span style="color:Red"> * </span></label>
+								    <div class="col-md-6">
+								      <input type="date" class="form-control" ng-model="employee.employeeQualificationDetails.interMarks"  name="ipercentage" placeholder="enter percentage"  required/>
+								       <span style="color:Red"  ng-if="aeq.ipercentage.$error.required && aeq.ipercentage.$dirty">required</span>
+								    </div>
+								</div>
+								    <div class="form-group col-md-6">
+									    <label class="control-label col-md-4" for="employee">Degree University:<span style="color:Red"> * </span></label>
+									    <div class="col-md-6"> 
+									      <input type="text" class="form-control" ng-model="employee.employeeQualificationDetails.degreeUniversity"  name="du"  placeholder="enter university" required>
+									      <span style="color:Red"  ng-if="aeq.du.$error.required && aeq.du.$dirty">required</span>
+									    </div>
+							  	      </div>
+							  	     
+							  	      </div>
+							  	        <div class="row">
+							  	       <div class="form-group col-md-6">
+									    <label class="control-label col-md-4" for="employee">Degree: <span style="color:Red"> * </span></label>
+									    <div class="col-md-6"> 
+									      <input type="text" class="form-control" ng-model="employee.employeeQualificationDetails.degree"  name="degree"  placeholder="enter degree" required>
+									      <span style="color:Red"  ng-if="aeq.degree.$error.required && aeq.degree.$dirty">required</span>
+									    </div>
+							  	      </div>
+										<div class="form-group col-md-6">
+								    <label class="control-label col-md-4" for="employee">Stream:<span style="color:Red"> * </span></label>
+								    <div class="col-md-6">
+								      <input type="text" class="form-control" ng-model="employee.employeeQualificationDetails.degreeStream"  name="dstream" placeholder="enter stream" required  required/>
+								        <span style="color:Red"  ng-if="aeq.dstream.$error.required && aeq.dstream.$dirty">required</span>
+								    </div>
+								</div>
+							  	     
+							  	      </div>
+							  	           <div class="row">
+										<div class="form-group col-md-6">
+								    <label class="control-label col-md-4" for="employee">Year Of Passing:<span style="color:Red"> * </span></label>
+								    <div class="col-md-6">
+								      <input type="text" class="form-control" ng-model="employee.employeeQualificationDetails.degreeYearOfPassing"  name="dyop" placeholder="enter year of passing" required  required/>
+								         <span style="color:Red"  ng-if="aeq.dyop.$error.required && aeq.dyop.$dirty">required</span>
+								    </div>
+								</div>
+								    <div class="form-group col-md-6">
+									    <label class="control-label col-md-4" for="employee">Marks(%):<span style="color:Red"> * </span></label>
+									    <div class="col-md-6"> 
+									      <input type="text" class="form-control" ng-model="employee.employeeQualificationDetails.degreeMarks"  name="dpercent"  placeholder="enter percentage" required>
+									      <span style="color:Red"  ng-if="aeq.dpercent.$error.required && aeq.dpercent.$dirty">required</span>
+									    </div>
+							  	      </div>
+							  	     
+							  	      </div>
+							  	              <div class="row">
+										<div class="form-group col-md-6">
+								    <label class="control-label col-md-4" for="employee">PG University:</label>
+								    <div class="col-md-6">
+								      <input type="text" class="form-control" ng-model="employee.employeeQualificationDetails.pgUniversity"  name="pgu"  placeholder="enter PG University" required/>
+								       <span style="color:Red"  ng-if="aeq.pgu.$error.required && aeq.pgu.$dirty">required</span>
+								    </div>
+								</div>
+								    <div class="form-group col-md-6">
+									    <label class="control-label col-md-4" for="employee">PG:</label>
+									    <div class="col-md-6"> 
+									      <input type="text" class="form-control" ng-model="employee.employeeQualificationDetails.pg"  name="passportn"  placeholder="enter PG name" required>
+									      <span style="color:Red"  ng-if="aeq.passportn.$error.required && aeq.passportn.$dirty">required</span>
+									    </div>
+							  	      </div>
+							  	     
+							  	      </div>
+							  	             <div class="row">
+										<div class="form-group col-md-6">
+								    <label class="control-label col-md-4" for="employee">Stream:</label>
+								    <div class="col-md-6">
+								      <input type="text" class="form-control" ng-model="employee.employeeQualificationDetails.pgStream"  name="pgstraeqm"   placeholder="enter stream" required/>
+								        <span style="color:Red"  ng-if="aeq.pgstraeqm.$error.required && aeq.pgstraeqm.$dirty">required</span>
+								    </div>
+								</div>
+								    <div class="form-group col-md-6">
+									    <label class="control-label col-md-4" for="employee">Year Of Passing:</label>
+									    <div class="col-md-6"> 
+									      <input type="text" class="form-control" ng-model="employee.employeeQualificationDetails.pgYearOfPassing"  name="passportn"  placeholder="enter year of passing" required>
+									      <span style="color:Red"  ng-if="aeq.passportn.$error.required && aeq.passportn.$dirty">required</span>
+									    </div>
+							  	      </div>
+							  	     
+							  	      </div>
+							  	             <div class="row">
+										<div class="form-group col-md-6">
+								    <label class="control-label col-md-4" for="employee">Marks(%):<span style="color:Red"> * </span></label>
+								    <div class="col-md-6"> 
+									      <input type="text" class="form-control" ng-model="employee.employeeQualificationDetails.pgMarks"  name="ppercent"  placeholder="enter name of your certificate" required>
+									      <span style="color:Red"  ng-if="aeq.ppercent.$error.required && aeq.ppercent.$dirty">required</span>
+									    </div>
+								</div>
+								    <div class="form-group col-md-6">
+									    <label class="control-label col-md-4" for="employee">Certificate 1:</label>
+									    <div class="col-md-6"> 
+									      <input type="text" class="form-control" ng-model="employee.employeeQualificationDetails.certificate1"  name="cert1"  placeholder="enter name of your certificate" required>
+									      <span style="color:Red"  ng-if="aeq.cert1.$error.required && aeq.cert1.$dirty">required</span>
+									    </div>
+							  	      </div>
+							  	     
+							  	      </div>
+							  	                 <div class="row">
+										<div class="form-group col-md-6">
+								    <label class="control-label col-md-4" for="employee">Certificate 2:</label>
+								   <div class="col-md-6"> 
+									      <input type="text" class="form-control" ng-model="employee.employeeQualificationDetails.certificate3"  name="cert2"  placeholder="enter name of your certificate" required>
+									      <span style="color:Red"  ng-if="aeq.cert2.$error.required && aeq.cert2.$dirty">required</span>
+									    </div>
+								</div>
+								    <div class="form-group col-md-6">
+									    <label class="control-label col-md-4" for="employee">Certificate 3:</label>
+									    <div class="col-md-6"> 
+									      <input type="text" class="form-control" ng-model="employee.employeeQualificationDetails.certificate3"  name="cert3"  placeholder="enter name of your certificate" required>
+									      <span style="color:Red"  ng-if="aeq.cert3.$error.required && aeq.cert3.$dirty">required</span>
+									    </div>
+							  	      </div>
+							  	     
+							  	      </div>
+								
+								
+							
+									
+	<div class="form-group">
+		<div class="col-md-11">
+			<button type="button" class="btn btn-primary pull-right" ui-sref="salary">Next Section</button>
+			<button type="button" class="btn btn-primary " ui-sref="prevexp">Back</button>
+		</div>
+	</div>
+</form>
+	   	
+	  
+	  </div>
+	  	
+	</div>
+	
+    
+    </div>
+</div>
+	
+    </div>
+    	
+		

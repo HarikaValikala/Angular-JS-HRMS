@@ -1,0 +1,117 @@
+<div class="wrapper">
+	<top-dir></top-dir>
+		<side-dir></side-dir>
+		<div class="content">
+				<div class="container">
+					<div class="col-md-offset-2 col-md-8">
+						<div class="Emp_mar_top addEmployeelabel">
+							<h3 class="head_change">Customer</h3>
+							<form name="cusDef">
+									<div  class="form-group row">
+										<label for="tag" class="control-label col-md-3"> Customer Name : <span style="color:Red">*</span></label>
+										<div class="col-md-9">
+											<input type="text" class="form-control" ng-model="cusGetList.customerName" name="cusname" placeholder="Enter Contract Period" required/>
+											 <div class="has-error" ng-show="cusDef.cusname.$dirty" >
+						                    	<span style="color:Red" class="error" ng-show="cusDef.cusname.$error.required"> Customer Name is Required !</span>
+						                  	</div>
+										</div>
+									</div>
+									<div  class="form-group row">
+										<label for="tag" class="control-label col-md-3"> Billing Model : <span style="color:Red">*</span></label>
+										<div class="col-md-9">
+											<select class='form-control' ng-model="cusGetList.billingModel.id" name="bill" ng-options="cus.id as cus.modeOfBilling for cus in billDetails" ng-change="billGet(cusGetList.billingModel.id)">
+												<option value="">Choose an option</option>
+							  				</select>
+											<div class="has-error" ng-show="cusDef.bill.$dirty" >
+						                    	<span style="color:Red" class="error" ng-show="cusDef.bill.$error.required"> Billing Model is Required !</span>
+						                  	</div>
+										</div>
+									</div>
+									<div  class="form-group row">
+										<label for="tag" class="control-label col-md-3"> BGV Owner : <span style="color:Red">*</span></label>
+										<div class="col-md-9">
+											<select class='form-control' ng-model="cusGetList.bgvOwner.id" name="bgvO" ng-options="cus.id as cus.owner for cus in bgvOwnDetails" ng-change="bgvOwGet(cusGetList.bgvOwner.id)">
+												<option value="">Choose an option</option>
+							  				</select>
+											 <div class="has-error" ng-show="cusDef.bgvO.$dirty" >
+						                    	<span style="color:Red" class="error" ng-show="cusDef.bgvO.$error.required"> BGV Owner is Required !</span>
+						                  	</div>
+										</div>
+									</div>
+									<div  class="form-group row">
+										<label for="tag" class="control-label col-md-3"> BGV Vendor : <span style="color:Red">*</span></label>
+										<div class="col-md-9">
+											<select class='form-control' ng-model="cusGetList.bgvVendor.id" name="bgvV" ng-options="ven.id as ven.vendor for ven in bgvVenDetails" ng-change="bgvVeGet(cusGetList.bgvVendor.id)">
+												<option value="">Choose an option</option>
+							  				</select>
+											 <div class="has-error" ng-show="cusDef.bgvV.$dirty" >
+						                    	<span style="color:Red" class="error" ng-show="cusDef.bgvV.$error.required"> BGV Vendor is Required !</span>
+						                  	</div>
+										</div>
+									</div>
+									<div class="form-group row">
+										<label for="permanent" class="control-label col-md-4" > Permanent : </label>
+										<div class="col-md-8">
+											<input type="radio" ng-model="cusGetList.permanent" value="yes" name="perm"> Yes
+											<input type="radio" ng-model="cusGetList.permanent" value="no" name="perm"> No
+											<div class="has-error" ng-show="cusDef.perm.$dirty" >
+						                    	<span style="color:Red" class="error" ng-show="cusDef.perm.$error.required"> Permanent is Required !</span>
+						                  	</div>
+										</div>
+									</div>
+									<div class="form-group row">
+										<label for="c2H" class="control-label col-md-4" > c2H : </label>
+										<div class="col-md-8">
+											<input type="radio" ng-model="cusGetList.c2H" value="yes" name="c2h"> Yes
+											<input type="radio" ng-model="cusGetList.c2H" value="no" name="c2h"> No
+											<div class="has-error" ng-show="cusDef.c2h.$dirty" >
+						                    	<span style="color:Red" class="error" ng-show="cusDef.c2h.$error.required"> c2H is Required !</span>
+						                  	</div>
+										</div>
+									</div>
+									<div class="form-group row">
+										<label for="itServices" class="control-label col-md-4" > IT Services : </label>
+										<div class="col-md-8">
+											<input type="radio" ng-model="cusGetList.itServices" value="yes" name="it"> Yes
+											<input type="radio" ng-model="cusGetList.itServices" value="no" name="it"> No
+											<div class="has-error" ng-show="cusDef.it.$dirty" >
+						                    	<span style="color:Red" class="error" ng-show="cusDef.it.$error.required"> IT Services is Required !</span>
+						                  	</div>
+										</div>
+									</div>
+									<div  class="form-group row">
+										<label for="tag" class="control-label col-md-3"> Leave Allowed : <span style="color:Red">*</span></label>
+										<div class="col-md-9">
+											<select class='form-control' ng-model="cusGetList.leavesAllowed.id" name="leave" ng-options="leave.id as leave.leaveType for leave in leaveDetails" ng-change="leaveAllowGet(cusGetList.leavesAllowed.id)">
+												<option value="">Choose an option</option>
+							  				</select>
+											 <div class="has-error" ng-show="cusDef.leave.$dirty" >
+						                    	<span style="color:Red" class="error" ng-show="cusDef.leave.$error.required"> Leave Allowed is Required !</span>
+						                  	</div>
+										</div>
+									</div>
+									<div  class="form-group row">
+										<label for="tag" class="control-label col-md-3"> GST Id : <span style="color:Red">*</span></label>
+										<div class="col-md-9">
+											<input type="text" class="form-control" ng-model="cusGetList.gstId" name="gstId" placeholder="Enter GST Id" required/>
+											 <div class="has-error" ng-show="cusDef.gstId.$dirty" >
+						                    	<span style="color:Red" class="error" ng-show="cusDef.gstId.$error.required"> GST Id is Required!</span>
+						                  	</div>
+										</div>
+									</div>
+								</form>
+								<div class="col-md-12">
+									<button type="button" ui-sref="customerDefTable" class="btn btn-primary btn_mar_top">Back</button>
+									<button type="button" class="btn btn-primary pull-right btn_mar_top" ng-click = "cusDefById()">Reset</button>
+								
+									
+									<button type="button" class="btn btn-primary pull-right btn_mar_top" ng-click="cusEdit()">Update</button>
+								</div>
+			
+							
+							</div>
+						</div>
+					</div>
+				</div>
+		</div>
+</div>

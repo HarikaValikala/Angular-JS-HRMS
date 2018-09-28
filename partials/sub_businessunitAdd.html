@@ -1,0 +1,37 @@
+<div class="wrapper">
+	<top-dir></top-dir>
+		<side-dir></side-dir>
+		<div class="content">
+				<div class="container">
+					<div class="col-md-offset-2 col-md-8">
+						<form class="Emp_mar_top addEmployeelabel" name="sbu">
+							<h3 style="color:#192766">Sub Business Unit</h3>
+							<div class="form-group btn_mar_top row">
+								<label for="Businessunit" class="control-label col-md-3">  Business Unit : <span style="color:Red"> * </span></label>
+								<div class="col-md-9">
+									<select class='form-control' ng-model="id"  ng-options="detail.id as detail.nameOfBusinessUnit for detail in budetails" ng-change="getlist(id)" name="businessunit" required>
+							  		<option value="">Choose an option</option>
+							  		</select>
+							        <span style="color:Red"  ng-show="sbu.businessunit.$error.required && sbu.businessunit.$touched">business unit is Required!</span>
+								</div>
+							</div>
+							<div class="form-group row">
+								<label for="subBusinessunit" class="control-label col-md-3">Sub BusinessUnit :<span style="color:Red"> * </span></label>
+								<div class="col-md-9">
+									<input type="text" class="form-control" ng-model="subBusinessUnitName" name="subbusinessunit" ng-pattern="/^[a-zA-Z\s]*$/"  placeholder="Enter Sub business unit" required/>
+									<span style="color:Red"  ng-if="sbu.subbusinessunit.$error.required && sbu.subbusinessunit.$dirty">Subbusiness Unit is required</span>
+                                    <span style="color:Red" ng-show="sbu.subbusinessunit.$error.pattern">only strings are allowed</span>
+								</div>
+							</div>
+							<div class="col-md-12">
+									<button type="button" ui-sref="subBusinessUnit" class="btn btn-primary btn_mar_top">Back</button>
+								
+									
+									<button type="button" class="btn btn-primary pull-right btn_mar_top" ng-click="subbusinessSave()" ng-disabled="sbu.$invalid">Save</button>
+								</div>
+							
+						</form>
+					</div>
+				</div>
+		</div>
+</div>

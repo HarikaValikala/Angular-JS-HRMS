@@ -1,0 +1,65 @@
+<div class="wrapper">
+	<top-dir></top-dir>
+		<side-dir></side-dir>
+		<div class="content">
+				<div class="container">
+					<div class="col-md-offset-2 col-md-8">
+					<div class="Emp_mar_top addEmployeelabel">
+							<h3 class="head_change">Customer</h3>
+							<div class="btn_mar_top">
+						<form name="cu" >
+							
+							<div class="form-group btn_mar_top row">
+								<label for="cuList" class="control-label col-md-3"> Customer Name :<span style="color:Red"> * </span> </label>
+								<div class="col-md-9">
+									<input type="text" class="form-control" ng-model="nameOfTheCustomer" name="customer" ng-pattern="/^[a-zA-Z\s]*$/" placeholder="enter customer name" required/>
+									<span  style="color:Red"  ng-if="cu.customer.$error.required && cu.customer.$dirty">customer name is required </span>
+							         <span  style="color:Red"  ng-show="cu.customer.$error.pattern">only strings are allowed</span>
+								</div>
+							</div>
+							<div class="form-group  row">
+								<label for="cuList" class="control-label col-md-3">Contract Person :<span style="color:Red"> * </span> </label>
+								<div class="col-md-9">
+									<input type="text" class="form-control" ng-model="contractPersonName" name="contract" ng-pattern="/^[a-zA-Z\s]*$/" placeholder="enter contract person name" required/>
+									<span  style="color:Red"  ng-if="cu.contract.$error.required && cu.contract.$dirty">contract person name is required </span>
+							         <span  style="color:Red"  ng-show="cu.contract.$error.pattern">only strings are allowed</span>
+								</div>
+							</div>
+							<div class="form-group row">
+								<label for="cuList" class="control-label col-md-3"> Location :<span style="color:Red"> * </span> </label>
+								<div class="col-md-9">
+								<select class='form-control' ng-model="list.id" name="location" ng-options="list.id as list.locationName for list in locatelist" required>
+							  	<option value="">choose an option</option>
+							  	</select>
+							  <span  style="color:Red"  ng-if="cu.location.$error.required && cu.location.$touched">location name is required </span>
+							  	</div>
+							</div>
+							<div class="form-group  row">
+								<label for="cuList" class="control-label col-md-3">contact :<span style="color:Red"> * </span> </label>
+								<div class="col-md-9">
+									<input type="text" class="form-control" ng-model="contactNo" name="contact" ng-pattern="/^[6789]\d{9}$/" placeholder="enter contact number" required/>
+									<span style="color:Red"  ng-if="cu.contact.$error.required && cu.contact.$dirty">Contact number is  required </span>
+                                      <span style="color:Red" ng-show="cu.contact.$error.pattern">Please enter a 10 digit number</span>
+								</div>
+							</div>
+							<div class="form-group  row">
+								<label for="cuList" class="control-label col-md-3"> Email : <span style="color:Red"> * </span></label>
+								<div class="col-md-9">
+									<input type="text" class="form-control" ng-model="emailId" name="email" ng-pattern="/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/" placeholder="enter email id" required/>
+									 <span  style="color:Red"  ng-if="cu.email.$error.required && cu.email.$dirty">Email is a required field</span>
+							         <span  style="color:Red"  ng-show="cu.email.$error.pattern">Invalid Email</span>
+								</div>
+							</div>
+						</form>
+					
+						<div class="col-md-12">
+									<button type="button" ui-sref="customerTable" class="btn btn-primary btn_mar_top">Back</button>	
+									<button type="button" class="btn btn-primary pull-right btn_mar_top" ng-click="customerpostreq()" ng-disabled="cu.$invalid">Save</button>
+						</div>
+   								
+							</div>
+
+				</div>
+		</div>
+		</div>
+</div>

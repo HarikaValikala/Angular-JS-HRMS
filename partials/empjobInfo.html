@@ -1,0 +1,166 @@
+
+	<div class="wrapper">
+	<top-dir></top-dir>
+		<side-dir></side-dir>
+		<div class="content">
+			<div class="btn_mar_top ">	
+			
+			<div class="container">
+		<div id="form-container">
+  
+	      <div class="page-header text-center">
+	          <h2>Employee</h2>
+	         
+	          <div id="status-buttons" class="text-center ">
+	              <a ui-sref-active="active" ui-sref="basicinfo"><span>1</span>  Basic info</a>
+	              <a ui-sref-active="active" ui-sref="addinfo"><span>2</span> Add Info</a>
+	               <a ui-sref-active="active" ui-sref="jobinfo"><span>3</span>Job Info</a>
+	                 <a ui-sref-active="active" ui-sref="kye"><span>4</span>KYE</a>
+	                 <a ui-sref-active="active" ui-sref="prevexp"><span>5</span>Prev Exp</a>
+	                 <a ui-sref-active="active" ui-sref="qualification"><span>6</span>Qualification</a>
+	                <!--  <a ui-sref-active="active" ui-sref="salary"><span>7</span>Salary</a>
+	                 <a ui-sref-active="active" ui-sref="insurance"><span>8</span>Insurance</a> -->
+	           </div>      
+	         
+	      </div>
+	      
+	     <h3 style= "margin-left:40px;">Job Information</h3>
+	          
+	                <form class="form-horizontal addEmployeelabel" name="ae">
+  	
+							  	   <div class="row">
+								
+								<div class="form-group col-md-6">
+								    <label class="control-label col-md-4" for="employee">Date of joining-1:<span style="color:Red"> * </span></label>
+								    <div class="col-md-6">
+								      <input type="date" class="form-control" ng-model="employee.employeeJobDetails.dateOfJoining1"  name="datej" required/>
+								       <span style="color:Red"  ng-show="ae.datej.$error.required && ae.datej.$touched">Select date of joining</span>
+								    </div>
+								</div>
+									<div class="form-group col-md-6">
+								    <label class="control-label col-md-4" for="employee"> Date of joining-2:<span style="color:Red"> * </span></label>
+								    <div class="col-md-6">
+								      <input type="date" class="form-control" ng-model="employee.employeeJobDetails.dateOfJoining2"  name="datej2"   required/>
+								        <span style="color:Red"  ng-show="ae.datej2.$error.required && ae.datej2.$touched">Select date of joining</span>
+								    </div>
+								</div>
+								</div>	
+									<div class="row">
+							
+								<div class="form-group col-md-6">
+								  	<label for="employee" class="control-label col-md-4">Resource:<span style="color:Red"> * </span></label>
+								  	<div class="col-md-6">
+										 <select class="form-control" ng-model="employee.employeeJobDetails.resourceType.id" ng-options="detail.id as detail.resourceType for detail in resourceList" ng-change="getList(employee.resourceType.id)" name="resource" required>
+										<option value="">Select an option</option>
+										</select> 
+										<span style="color:Red"  ng-show="ae.resource.$error.required && ae.resource.$touched">resource is required!</span>
+									</div>
+								</div>
+							<div class="form-group col-md-6 ">
+								<label for="businessU" class="control-label col-md-4"> Team :<span style="color:Red"> * </span> </label>
+								
+								
+								<div class="col-md-6">
+								
+								<select class='form-control' ng-model="team.id" name="team" ng-options="list.id as list.team for list in costlist" ng-change="teamlist(id)" required>
+								<option value="">Select an option</option>
+							  	</select>
+							  	  <span  style="color:Red"  ng-if="ae.team.$error.required && ae.team.$touched">cost center name is required </span>
+							  	</div>
+							   </div> 
+								</div>	
+								<div class="row">
+								<div class="form-group col-md-6">
+								    <label class="control-label col-md-4" for="employee">Business Unit:<span style="color:Red"> * </span></label>
+								    <div class="col-md-6">
+								     <select class='form-control' ng-model="employee.employeeJobDetails.businessUnit.id"  ng-options="detail1.id as detail1.nameOfBusinessUnit for detail1 in budetails" ng-change="subbusunit(employee.businessUnit.id)" name="busin" required>
+								    	<option value="">Select an option</option>
+							  			</select>
+							  			
+						                    <span style="color:Red"  ng-show="ae.busin.$error.required && ae.busin.$touched">Business Unit is Required!</span>
+						               
+								    </div>
+								</div>
+								<div class="form-group col-md-6">
+								    <label class="control-label col-md-4" for="employee">Sub business unit :<span style="color:Red"> * </span></label>
+								    <div class="col-md-6">
+								      <select class='form-control' ng-model="employee.employeeJobDetails.subBusinessUnit.id"  ng-options="detail.id as detail.subBusinessUnitName for detail in list" ng-change="teamBusunit(employee.subBusinessUnit.id)" name="subusin" required>
+							  			<option value="">Select an option</option>
+							  			</select>
+							  			 <span style="color:Red"  ng-show="ae.subusin.$error.required && ae.subusin.$touched">Subbusiness Unit is Required!</span>
+								    </div>
+								</div>
+							
+								</div>
+									<div class="row">
+								<div class="form-group col-md-6">
+								  	<label for="employee" class="control-label col-md-4">Designation:<span style="color:Red"> * </span></label>
+								  	<div class="col-md-6">
+										<select class='form-control' ng-model="employee.employeeJobDetails.designation.id"   ng-options="detail.id as detail.designation for detail in deslis" name="desig" required >
+										<option value="">Select an option</option>
+										</select>
+										<span style="color:Red"  ng-show="ae.desig.$error.required && ae.desig.$touched">Designation is required!</span>
+									</div>
+								</div>
+								<div class="form-group col-md-6">
+								    <label class="control-label col-md-4" for="employee">Bond type:<span style="color:Red"> * </span></label>
+								    <div class="col-md-6"> 
+								       <select class="form-control" ng-model="employee.employeeJobDetails.bondType.id" ng-options="detail.id as detail.bondType for detail in getBondlist" ng-change="getBondType(employee.bondType.id)" name="bond" required>
+										<option value="">Select an option</option>
+										</select> 
+										<span style="color:Red"  ng-show="ae.bond.$error.required && ae.bond.$touched">Bond is required!</span>
+								    </div>
+							  	</div>
+								</div>
+									   <div class="row">
+								
+								<div class="form-group col-md-6">
+								    <label class="control-label col-md-4" for="employee">Date of release:<span style="color:Red"> * </span></label>
+								    <div class="col-md-6">
+								      <input type="date" class="form-control" ng-model="employee.employeeJobDetails.dateOfRelease"  name="dor" required/>
+								       <span style="color:Red"  ng-show="ae.dor.$error.required && ae.dor.$touched">Select date of releasing</span>
+								    </div>
+								</div>
+									<div class="form-group col-md-6">
+								    <label class="control-label col-md-4" for="employee"> Date of exit:<span style="color:Red"> * </span></label>
+								    <div class="col-md-6">
+								      <input type="date" class="form-control" ng-model="employee.employeeJobDetails.dateOfExit"  name="doe"   required/>
+								        <span style="color:Red"  ng-show="ae.doe.$error.required && ae.doe.$touched">Select date of exit</span>
+								    </div>
+								</div>
+								</div>
+									   <div class="row">
+								
+							    <div class="form-group col-md-6">
+									    <label class="control-label col-md-4" for="employee">Seperation type:<span style="color:Red"> * </span></label>
+									    <div class="col-md-6"> 
+									       <select class="form-control" name="seperat" ng-model="employee.employeeJobDetails.seperationType.id" ng-options="detail.id as detail.seperationType for detail in getSepList"  required>
+										<option value="">Select an option</option>
+										</select> 
+									      <span style="color:Red"  ng-show="ae.seperat.$error.required && ae.seperat.$touched">  required</span>
+                                         
+									    </div>
+							  	      </div>
+								</div>
+								<div class="clearfix"></div>
+								
+								
+	<div class="form-group">
+		<div class=" col-md-11">
+			<button type="button" class="btn btn-primary pull-right" ui-sref="kye">Next Section</button>
+			<button type="button" class="btn btn-primary " ui-sref="addinfo">Back</button>
+		</div>
+	</div>
+</form>
+
+	  </div>
+	  	
+	</div>
+	
+    
+    </div>
+</div>
+	
+    </div>
+    	
+		

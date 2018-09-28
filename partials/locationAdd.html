@@ -1,0 +1,32 @@
+			<div class="wrapper">
+	<top-dir></top-dir>
+		<side-dir></side-dir>
+		<div class="content">
+				<div class="container">
+					<div class="col-md-offset-2 col-md-8">
+					<div class="Emp_mar_top addEmployeelabel">
+							<h3 class="head_change">location</h3>
+							<div class="btn_mar_top">
+							<form name="loc" >
+							<div class="form-group  row">
+					               <label for="custom" class="control-label col-md-3">Add location :<span style="color:Red"> * </span> </label>
+									   <div class="col-md-9">
+										   <input type="text" class="form-control" ng-model="locationName" name="location" ng-pattern="/^[a-zA-Z\s]*$/" placeholder="Enter Location" required/>
+										 <span  style="color:Red"  ng-if="loc.location.$error.required && loc.location.$dirty">location name is required </span>
+										 <span  style="color:Red"  ng-show="loc.location.$error.pattern">only strings are allowed</span>
+								      </div>
+							</div>
+							</form>
+							
+							<div class="col-md-12">
+									<button type="button" ui-sref="locationTable" class="btn btn-primary btn_mar_top">Back</button>	
+									<button type="button" class="btn btn-primary pull-right btn_mar_top" ng-click="locationpostreq()" ng-disabled="loc.$invalid">Save</button>
+								</div>
+							
+   								
+						
+					</div>	
+				</div>
+		</div>
+		</div>
+</div>

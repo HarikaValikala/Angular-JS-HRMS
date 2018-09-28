@@ -1,0 +1,36 @@
+<div class="wrapper">
+	<top-dir></top-dir>
+		<side-dir></side-dir>
+		<div class="content">
+				<div class="container">
+					<div class="col-md-offset-2 col-md-8">
+						<div class="Emp_mar_top addEmployeelabel">
+							<h3 style="color:#192766">Sub Business Unit</h3>
+							<div class="form-group btn_mar_top row">
+								<label for="Businessunit" class="control-label col-md-3">Business Unit : </label>
+								<div class="col-md-9">
+									<select class='form-control' ng-model="subusinessget.bussinessUnitId.id"  ng-options="detail.id as detail.nameOfBusinessUnit for detail in budetails" ng-change="getlist(subusinessget.id)" ng-change="getlist(id)" name="businessunit" required>
+							  	</select>
+							  	<span style="color:Red"  ng-show="sbu.businessunit.$error.required && sbu.businessunit.$touched">cost center is Required!</span>
+								</div>
+							</div>
+							<div class="form-group row">
+								<label for="subBusinessunit" class="control-label col-md-3">Sub Business Unit: </label>
+								<div class="col-md-9">
+									<input type="text" class="form-control" ng-model="subusinessget.subBusinessUnitName" name="subbusinessunit" ng-pattern="/^[a-zA-Z\s]*$/" required />
+									<span style="color:Red"  ng-if="sbu.subbusinessunit.$error.required && sbu.subbusinessunit.$dirty">Subbusiness Unit is required</span>
+                                    <span style="color:Red" ng-show="sbu.subbusinessunit.$error.pattern">only strings are allowed</span>
+								</div>
+							</div>
+							<div class="col-md-12">
+									<button type="button" ui-sref="subBusinessUnit" class="btn btn-primary btn_mar_top">Back</button>
+								
+									<button type="button" class="btn btn-primary pull-right btn_mar_top"  ng-click="subusinessGetById()">Reset</button>
+									<button type="button" class="btn btn-primary pull-right btn_mar_top" ng-click="subusinessEditList()">Update</button>
+								</div>
+						
+						</div>
+					</div>
+				</div>
+		</div>
+</div>

@@ -1,0 +1,45 @@
+.logo{
+    position: absolute;
+    top: 5px;
+}
+.nav_change{
+    margin-bottom: 0px !important;
+    border: 0px solid transparent !important;
+}
+.navbg_change{
+    margin-bottom: 0px !important;
+    border: 0px solid transparent !important;
+    background-color: #192766 !important;
+    border-radius: 0px !important;
+}
+.font_change{
+	color:#FFF !important;
+}
+.bg_change{
+	background-color: #e4e4e4;
+}
+.img_change{
+	top: 20px;
+    position: absolute;
+}
+.banner_change{
+    top: 120px;
+    left: 80px;
+}
+.box{
+	width:250px;
+	height: 340px;
+	margin-left: 95px;
+    margin-top: 120px;
+    background-color: #fffff8;
+    border: 1px solid #e3e3e3;
+    border-radius: 4px;
+    box-shadow: 2px 3px 3px 3px #a0a0a0;
+}
+.mar_well{
+	padding: 10px;
+}
+.list_change{
+	float: left;
+	padding: 10px;
+}

@@ -1,0 +1,72 @@
+<div class="wrapper">
+	<top-dir></top-dir>
+		<side-dir></side-dir>
+		<div class="content">
+				<div class="container">
+					<div class="col-md-offset-2 col-md-8">
+						<div class="Emp_mar_top addEmployeelabel">
+							<div class="form-horizontal">
+								<h3 style="color:#192766;text-align:center;" >Project Creation (saveChanges)</h3>
+								<div class="form-group Emp_mar_top">
+									<label for="pjtname" class="control-label col-md-3"> Project Name : </label>
+									<div class="col-md-9">
+										<input type="text" ng-model="pjt.name" class="form-control">
+									</div>
+								</div>
+								<div class="form-group">
+									<label for="pjtdate" class="control-label col-md-3"> Start Date : </label>
+									<div class="col-md-9">
+										<input type="date" ng-model="pjt.startdate" class="form-control">
+									</div>
+								</div>
+								<div class="form-group">
+									<label for="pjtEnd" class="control-label col-md-3" > End Date : </label>
+									<div class="col-md-9">
+										<input type="date" class="form-control" ng-model="pjt.enddate">
+									</div>
+								</div>
+								<div class="form-group">
+									<label for="pjtduration" class="control-label col-md-3" > Duration : </label>
+									<div class="col-md-9">
+										<input type="limit" class="form-control" ng-model="pjtduration">
+									</div>
+								</div>
+								<div class="form-group">
+									<label for="pjttype" class="control-label col-md-3" > Project Type : </label>
+									<div class="col-md-9">
+										<input type="limit" class="form-control" ng-model="pjttype">
+									</div>
+								</div>
+								<div class="form-group">
+									<label for="pjttype" class="control-label col-md-3" > Customer Name : </label>
+									<div class="col-md-9">
+										<input type="text" class="form-control" ng-model="pjtcustomer">
+									</div>
+								</div>
+								<div class="form-group">
+									<label for="location" class="control-label col-md-3" > Location : </label>
+									<div class="col-md-9">
+										<input type="text" class="form-control" ng-model="pjtlocation">
+									</div>
+								</div>
+								<div class="form-group">
+									<label for="budget" class="control-label col-md-3" > Budget : </label>
+									<div class="col-md-9">
+										<input type="text" class="form-control" ng-model="pjtbudget">
+									</div>
+								</div>
+								<!-- <div class="form-group">
+									<label for="employee" class="control-label col-md-3" > List Of Employees : </label>
+									<div class="col-md-9">
+										<input type="text" class="form-control" ng-model="pjtemployee">
+									</div>
+								</div> -->
+							</div>
+								<button type="button" class="btn btn-primary pull-right  Emp_mar_top" ng-click="">Save</button>
+							</div>
+							
+						</div>
+					</div>
+				</div>
+		</div>
+</div>

@@ -1,0 +1,44 @@
+<div class="wrapper">
+	<top-dir></top-dir>
+		<side-dir></side-dir>
+		<div class="content">
+				<div class="container">
+					<div class="col-md-offset-2 col-md-8">
+						<div class="Emp_mar_top addEmployeelabel">
+							<h3 class="head_change">Education Details</h3>
+							<div class="btn_mar_top">
+							<form name="contacttype">
+								<div  class="form-group row">
+									<label for="tag" class="control-label col-md-3"> Education Type : <span style="color:Red">*</span></label>
+									<div class="col-md-9">
+										<select class='form-control' ng-model="postEducation.educationType" name="bill">
+											<option value="">Choose an option</option>
+											<option ng-repeat="Details in educationType">{{Details}}</option>
+							  			</select>
+										<div class="has-error" ng-show="contacttype.ctype.$dirty" >
+					                    	<span style="color:Red" class="error" ng-show="contacttype.ctype.$error.required"> Education Type is Required !</span>
+					                  	</div>
+									</div>
+								</div>
+									<div  class="form-group row">
+									<label for="tag" class="control-label col-md-3"> Group : <span style="color:Red">*</span></label>
+									<div class="col-md-9">
+										<input type="text" class="form-control" ng-model="postEducation.educationGroup" name="ctype" placeholder="Enter Group" required/>
+										<div class="has-error" ng-show="contacttype.ctype.$dirty" >
+					                    	<span style="color:Red" class="error" ng-show="contacttype.ctype.$error.required"> Group is Required !</span>
+					                  	</div>
+									</div>
+								</div>
+								
+								</form>
+								</div>
+								<div class="col-md-12">
+									<button type="button" ui-sref="educationDetailsTable" class="btn btn-primary btn_mar_top">Back</button>	
+									<button type="button" class="btn btn-primary pull-right btn_mar_top" ng-click="educationPost()" ng-disabled="contacttype.$invalid">Save</button>
+								</div>
+								
+						</div>
+					</div>
+				</div>
+			</div>
+	</div>

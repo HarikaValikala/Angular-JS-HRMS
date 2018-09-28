@@ -1,0 +1,32 @@
+<div class="wrapper">
+	<top-dir></top-dir>
+		<side-dir></side-dir>
+		<div class="content">
+				<div class="container">
+					<div class="col-md-offset-2 col-md-8">
+						<div class="Emp_mar_top addEmployeelabel">
+							<h3 class="head_change">Billing Model</h3>
+							<div class="btn_mar_top">
+							<form name="bill">
+								<div  class="form-group row">
+									<label for="tag" class="control-label col-md-3"> Billing Model : <span style="color:Red">*</span></label>
+									<div class="col-md-9">
+										<input type="text" class="form-control" ng-model="postModel.modeOfBilling" name="model" placeholder="Enter Billing Model" required/>
+										 <div class="has-error" ng-show="bill.model.$dirty" >
+					                    	<span style="color:Red" class="error" ng-show="bill.model.$error.required"> Billing Model is Required !</span>
+					                  	</div>
+									</div>
+								</div>
+								
+								</form>
+								</div>
+								<div class="col-md-12">
+									<button type="button" ui-sref="billingModelTable" class="btn btn-primary btn_mar_top">Back</button>	
+									<button type="button" class="btn btn-primary pull-right btn_mar_top" ng-click="billingPost()" ng-disabled="bill.$invalid">Save</button>
+								</div>
+								
+						</div>
+					</div>
+				</div>
+			</div>
+	</div>

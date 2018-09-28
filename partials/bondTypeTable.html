@@ -1,0 +1,96 @@
+<div class="wrapper">
+	<top-dir></top-dir>
+	<side-dir></side-dir>
+	<div class="content">
+		<div class="container">
+			<div class=" btn_mar_top ">
+				<div class="row">
+					<h3 class="pull-left head_change">Bond Type</h3>
+					<div class="col-md-offset-3 col-md-6">
+						<form class="form-inline">
+							<div class="input-group">
+								<input type="text" ng-model="search" class="form-control" size="50" placeholder="Search" ng-change="bondAdvance(search)" required>
+								<div class="input-group-btn">
+									<button type="button" class="btn btn-primary">Search</button>
+								</div>
+							</div>
+						</form>
+					</div>
+				</div>
+				<div class="addEmployeelabel">
+					<table class="table table-consider ">
+	
+						<tr>
+							<th>Bond Type Name</th>
+							<th>Contract Period</th>
+							<th>View Salary</th>
+							<th>Edit</th>
+							<th>Delete</th>
+						</tr>
+	
+						<tr ng-repeat="bondtype in bondList | filter: bondTypeSearch.bondType">
+							<td>{{bondtype.bondType}}</td>
+							<td>{{bondtype.contractPeriod.contractPeriod}}</td>
+							<td><a data-toggle="modal" data-target="#myModal" ng-click="viewDetails(bondtype.id)">View</a>
+											
+							</td>
+							<td><a ui-sref="bondTypeEdit({bondId:bondtype.id})"><img src="images/Edit.png"></a></td>
+							<td><a ng-click="bondTypeDelete(bondtype.id)"><img src="images/Trash.png"></a></td>
+						</tr>
+							 
+					</table>
+					<div>
+						<a ui-sref="bondTypeAdd"><button type="button" class="btn btn-primary pull-right ">Add</button></a>
+					</div>
+					<div align="center"  colspan="6">
+						<div class="text-center">
+							<pagination total-items="totalCount" ng-change="pageChanged()"
+														items-per-page="pageSizeSelected" direction-links="true"
+														ng-model="pageIndex" max-size="maxSize" class="pagination pag_change"
+														boundary-links="true" rotate="false" num-pages="numPages">
+							</pagination>
+													
+						</div>
+					</div>
+				</div> 
+			</div>
+		</div>
+	</div>
+</div>
+<!-- Modal -->
+							  <div class="modal fade" id="myModal" role="dialog">
+							    <div class="modal-dialog">
+							    
+							      <!-- Modal content-->
+							      <div class="modal-content">
+							        <div class="modal-header">
+							          <button type="button" class="close" data-dismiss="modal">&times;</button>
+							          <h4 class="modal-title">Salary Amount</h4>
+							        </div>
+							        <div class="modal-body">
+							      
+							          <table class="table table-bordered ">
+											<thead>
+											<tr>
+												<th>Starting Date</th>
+												<th>Ending Date</th>
+												<th>Salary Amount</th>
+											</tr>
+											</thead>
+											<tbody ng-repeat="x in tagResult">
+											<tr>
+												<td>{{x.startDate}}</td>
+												<td>{{x.endDate}}</td>
+												<td>{{x.salaryAmount}}</td>
+											</tr>
+											</tbody>
+										</table> 
+							        </div>	
+							        <div class="modal-footer">
+							          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+							        </div>
+							      </div>
+							      
+							    </div>
+							  </div>	
+ 
